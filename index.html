@@ -5,10 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
-    <h1>HomePage</h1>
+    <div class="back"></div>
+    <div class="registration-form">
+    <header>
+        <h1>Cadastro</h1>
+        <p>Insira todas as informações abaixo</p>
+    </header>
+    <form>
+        <div class="input-section email-section">
+        <input class="email" type="email" placeholder="INSIRA SEU E-MAIL" autocomplete="off"/>
+        <div class="animated-button"><span class="icon-paper-plane"><i class="fa fa-envelope-o"></i></span><span class="next-button email"><i class="fa fa-arrow-up"></i></span></div>
+        </div>
+        <div class="input-section password-section folded">
+        <input class="password" type="password" placeholder="INSIRA SUA SENHA"/>
+        <div class="animated-button"><span class="icon-lock"><i class="fa fa-lock"></i></span><span class="next-button password"><i class="fa fa-arrow-up"></i></span></div>
+        </div>
+        <div class="input-section repeat-password-section folded">
+        <input class="repeat-password" type="password" placeholder="REPITA SUA SENHA"/>
+        <div class="animated-button"><span class="icon-repeat-lock"><i class="fa fa-lock"></i></span><span class="next-button repeat-password"><i class="fa fa-paper-plane"></i></span></div>
+        </div>
+        <div class="success"> 
+        <p>Conta criada!</p>
+        </div>
+    </form>
+    </div>
 </body>
 </html>
