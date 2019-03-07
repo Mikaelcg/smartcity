@@ -4,173 +4,194 @@
     padding: 0;
   }
   
-  .back {
-    background: linear-gradient(120grad, #140d77, #111213);
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700');
+
+/* Change placeholder text inside inputs */
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #d7d7d7;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #d7d7d7;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #d7d7d7;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #d7d7d7;
+}
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #3a74cb;
+}
+
+h4 {
+  font-size: 1.2rem;
+  color: #3a74cb;
+}
+
+.subscribe-container {
+  text-align: center;
+  margin: 2em auto;
+  padding: 1em;
+  width: 90%;
+  max-width: 320px;
+}
+
+.mc_embed_signup input.required {
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #d7d7d7;
+  margin: 20px 0;
+  padding: 5px 20px 5px 10px;
+  outline: none;
+  width: 100%;
+  font-family: 'Open Sans', Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.mc_embed_signup input.required.error {
+    border-bottom: 1px solid #eb2344;
+}
+
+.mc_embed_signup input#mc-embedded-subscribe {
+  background: #3a74cb;
+  font-size: .8rem;
+  color: #fff;
+  border-radius: 40px;
+  padding: 12px 35px;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 4em auto;
+  display: block;
+  transition: 0.2s ease background;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 700;
+}
+
+.mc_embed_signup input#mc-embedded-subscribe:hover {
+  background: #144183;
+}
+
+/* Show focus state for power users that use 'TAB' to switch fields */
+.mc_embed_signup input#mc-embedded-subscribe:focus {
+  background: #144183;
+}
+
+.error-message {
+  display: none;
+  color: red;
+  text-align: center;
+  font-size: .8em;
+}
+
+.success-message {
+  display: none;
+  text-align: center;
+}
+
+.success-message > div {
+  width: 100%;
+  opacity: 0;
+  animation: reveal 1s 1s forwards;
+  text-align: center;
+}
+/* Appear animation for success message */
+@keyframes reveal {
+  0%, 75% {
+    opacity: 0;
   }
-  
-  .registration-form {
-    width: 400px;
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0%);
-            transform: translate(-50%, 0%);
-    top: 15%;
-    background: transparent;
+
+  100% {
+    opacity: 1;
   }
-  .registration-form header {
-    position: relative;
-    z-index: 4;
-    background: white;
-    padding: 20px 40px;
-    border-radius: 15px 15px 0 0;
-  }
-  .registration-form header h1 {
-    font-weight: 900;
-    letter-spacing: 1.5px;
-    color: #333;
-    font-size: 23px;
-    text-transform: uppercase;
-    margin: 0;
-  }
-  .registration-form header p {
-    word-spacing: 0px;
-    color: #9facb6;
-    font-size: 17px;
-    margin: 0;
-    margin-top: 5px;
-  }
-  .registration-form form {
-    position: relative;
-  }
-  .registration-form .input-section {
-    width: 100%;
-    position: absolute;
-    display: flex;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
+}
+
+/* 'SUCCESS!' check animation */
+svg.checkmark {
+  width: 75px;
+  height: 75px;
+  margin: 2em auto;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 4;
+  stroke: #3a74cb;
+  stroke-miterlimit: 10;
+  box-shadow: inset 0px 0px 0px #7ac142;
+  transition: 1s all ease;
+}
+
+/* Trigger animation we add 'active' class via JS */
+svg.checkmark.active {
+  animation: moveupwards 1s 1s forwards;
+}
+
+/* 'Move upwards' animation below, no need for absolutely positioned
+          elements or transform: translate. We'll create the subtle 'moving up'
+          effect by playing with margins and size. Responsive friendly! */
+@keyframes moveupwards {
+  0%, 75% {
+    width: 75px;
     height: 75px;
-    border-radius: 0 0 15px 15px;
-    overflow: hidden;
-    z-index: 2;
-    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.2);
-    transition: all 0.2s ease-in;
+    margin: 2em auto;
   }
-  .registration-form .input-section.folded {
-    width: 95%;
-    margin-top: 10px;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-    z-index: 1;
+
+  100% {
+    width: 50px;
+    height: 50px;
+    margin: 1em auto;
   }
-  .registration-form .input-section.folded input {
-    background-color: #620683;
+}
+
+/* Paths inside SVG. Each path will be animated using stroke property
+          and 'stroke' animation */
+svg > .checkmark-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  stroke: #3a74cb;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+svg > .checkmark-check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-width: 3;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
   }
-  .registration-form .input-section.folded span {
-    background-color: #620683;
+}
+
+/* Sorry IE and Edge users, no SVG animations supported for you,
+        so we'll hide our SVG to prevent empty space gap */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .success-message svg {
+    display: none;
   }
-  .registration-form .input-section.folded + .folded {
-    width: 90%;
-    margin-top: 20px;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-    z-index: 0;
+}
+
+@supports (-ms-ime-align: auto) {
+  .success-message svg {
+    display: none;
   }
-  .registration-form .input-section.folded + .folded input {
-    background-color: #bd1d1d;
-  }
-  .registration-form .input-section.folded + .folded span {
-    background-color: #bd1d1d;
-  }
-  .registration-form .input-section.fold-up {
-    margin-top: -75px;
-  }
-  .registration-form form input {
-    background: white;
-    color: #140d77;
-    width: 80%;
-    border: 0;
-    padding: 20px 40px;
-    margin: 0;
-  }
-  .registration-form form input:focus {
-    outline: none;
-  }
-  .registration-form form input::-webkit-input-placeholder {
-    color: #140d77;
-    font-weight: 100;
-  }
-  .registration-form form input:-ms-input-placeholder {
-    color: #140d77;
-    font-weight: 100;
-  }
-  .registration-form form input::-ms-input-placeholder {
-    color: #140d77;
-    font-weight: 100;
-  }
-  .registration-form form input::placeholder {
-    color: #140d77;
-    font-weight: 100;
-  }
-  
-  .animated-button {
-    width: 20%;
-    background-color: #140d77;
-  }
-  .animated-button span {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    line-height: 75px;
-    text-align: center;
-    height: 75px;
-    transition: all 0.2s ease-in;
-  }
-  .animated-button span i {
-    font-size: 25px;
-    color: #9999f8;
-  }
-  .animated-button .next-button {
-    background: transparent;
-    color: #9999f8;
-    font-weight: 100;
-    width: 100%;
-    border: 0;
-  }
-  
-  .next {
-    margin-top: -75px;
-  }
-  
-  .success {
-    width: 100%;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-    height: 75px;
-    border-radius: 0 0 15px 15px;
-    overflow: hidden;
-    z-index: 2;
-    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.2);
-    transition: all 0.2s ease-in;
-    background: limegreen;
-    margin-top: -75px;
-  }
-  .success p {
-    color: white;
-    font-weight: 900;
-    letter-spacing: 2px;
-    font-size: 18px;
-    width: 100%;
-    text-align: center;
-  }
-  
+}

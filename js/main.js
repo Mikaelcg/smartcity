@@ -1,67 +1,48 @@
-$("#document").ready(function(){
-    $('.email').on("change keyup paste",
-  function(){
-    if($(this).val()){
-      $('.icon-paper-plane').addClass("next");
-    } else {
-      $('.icon-paper-plane').removeClass("next");
+$(document).ready(function() {
+  $(".mc_embed_signup > form").submit(function(e) {
+    e.preventDefault(); // Prevent a new window from opening upon clicking 'Subscribe now' button
+
+    var validForm = true; // Set initial state of valid form to true
+    var inputArray = $(this).find("input.required"); // Find all required inputs and store them in array
+
+    // Simple check for all inputs to make sure the value is not empty
+    inputArray.each(function(item) {
+      if ($(this).val() == "") {
+        validForm = false;
+        $(".mc_embed_signup .error-message").show(); // if empty, show error message
+        $('.mc_embed_signup input.required').addClass('error'); // and highlight empty inputs
+      }
+    });
+
+    // Everything checks out! Continue...
+    if (validForm == true) {
+      var formContainer = $(".mc_embed_signup");
+      var formData = $(this).serialize(); // Format all info and get it ready for sendoff
+
+      // AJAX magic coming up...
+      $.ajax({
+        type: $(this).attr("method"),
+        url: $(this).attr("action"),
+        data: formData,
+        cache: false,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        encode: true,
+        error: function(err) {
+          console.log("Uh, oh. There was an error:", err); // You broke something...
+        },
+        success: function(data) {
+          console.log("Success! Here is the data:", data); // Yay!
+        }
+      }) // All done! Let's show the user a success message:
+        .done(function(data) {
+          $(formContainer).hide(); // Hide the initial form
+
+          $(".success-message").show(); // Show the checkmark
+          $("svg").addClass("active"); // Start animation of checkmark
+        });
     }
-  }
-);
 
-$('.next-button').hover(
-  function(){
-    $(this).css('cursor', 'pointer');
-  }
-);
-
-$('.next-button.email').click(
-  function(){
-    console.log("Something");
-    $('.email-section').addClass("fold-up");
-    $('.password-section').removeClass("folded");
-  }
-);
-
-$('.password').on("change keyup paste",
-  function(){
-    if($(this).val()){
-      $('.icon-lock').addClass("next");
-    } else {
-      $('.icon-lock').removeClass("next");
-    }
-  }
-);
-
-$('.next-button').hover(
-  function(){
-    $(this).css('cursor', 'pointer');
-  }
-);
-
-$('.next-button.password').click(
-  function(){
-    console.log("Something");
-    $('.password-section').addClass("fold-up");
-    $('.repeat-password-section').removeClass("folded");
-  }
-);
-
-$('.repeat-password').on("change keyup paste",
-  function(){
-    if($(this).val()){
-      $('.icon-repeat-lock').addClass("next");
-    } else {
-      $('.icon-repeat-lock').removeClass("next");
-    }
-  }
-);
-
-$('.next-button.repeat-password').click(
-  function(){
-    console.log("Something");
-    $('.repeat-password-section').addClass("fold-up");
-    $('.success').css("marginTop", 0);
-  }
-);
-})
+    return; // No go on form...
+  }); // end of submit function
+});
