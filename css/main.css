@@ -27,6 +27,7 @@
 body {
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 16px;
+  background-color: rgb(201, 239, 248);
 }
 
 h3 {
@@ -89,6 +90,11 @@ h4 {
 /* Show focus state for power users that use 'TAB' to switch fields */
 .mc_embed_signup input#mc-embedded-subscribe:focus {
   background: #144183;
+}
+
+.mc-field-group {
+  display: flex;
+  align-items: center;
 }
 
 .error-message {
