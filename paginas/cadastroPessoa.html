@@ -3,42 +3,47 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Cad. Residência</title>
+    <title>Cad Pess.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/main.js"></script>
 </head>
 <body>
     <div class="subscribe-container">
         <!-- Begin MailChimp Signup Form -->
     <div class="mc_embed_signup">
     
-        <h3>Cadastro de Residências <br> Smart Cities</h3>
+        <h3>Cadastro de Pessoas <br> Smart Cities</h3>
     
         <form action="https://boldpixelmedia.us5.list-manage.com/subscribe/post-json?u=d6c6ce7da87357b90e9859e81&amp;id=2091bdd722&c=?" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
         <div id="mc_embed_signup_scroll">
     
             <div class="mc-field-group">
-                <input type="text" value="" placeholder="Endereço" name="ENDEREÇO" class="required" id="mce-END">
-                <input type="number" value="" placeholder="Nº" name="NUMERO" class="required" id="mce-NUM">
+                <input type="text" value="" placeholder="Nome" name="nome" class="required" id="name">
             </div>
 
             <div class="mc-field-group">
-                <input type="text" value="" placeholder="Complementos" name="COMPLEMENTOS" class="required" id="mce-COMP">
+                <input type="text" value="" placeholder="Sobrenome" name="sobrenome" class="required" id="lastnam">
             </div>
 
             <div class="mc-field-group">
-                <input type="number" value="" placeholder="Metragem m²" name="METRAGEM" class="required" id="mce-MET">
+                <input type="date" value="" placeholder="Nascimento" name="dataNasc" class="required" id="nasc">
             </div>
 
-            <div class="mc-field-group">
-                    Cidade <br>
-                    <select class="required">
-                        <option>Selecione</option>
-                        <option>Curitiba</option>
-                    </select>
+            <!-- <div class="mc-field-group">
+                <input type="radio" value="Masculino" name="sex" class="required" id="mce-SEXM">Masculino
+                <input type="radio" value="Feminino" name="sex" class="required" id="mce-SEXF">Feminino
+            </div> -->
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="mce-SEXM" name="sex" class="required custom-control-input" value="Masculino">
+                <label class="custom-control-label" for="mce-SEXM">MASCULINO</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="mce-SEXF" name="sex" class="required custom-control-input" value="Feminino">
+                <label class="custom-control-label" for="mce-SEXF">FEMININO</label>
             </div>
     
             <p class="error-message">Por favor, preencha todos os campos.</p>
@@ -60,7 +65,7 @@
     
         <div>
             <h4>Successo!</h4>
-            <p>Residência cadastrada com sucesso.</p>
+            <p>Você foi cadastrado com sucesso.</p>
         </div>
     
     </div>

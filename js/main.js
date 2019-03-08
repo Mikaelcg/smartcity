@@ -23,7 +23,7 @@ $(document).ready(function() {
 			// AJAX magic coming up...
 			$.ajax({
 				type:"POST",
-				url: "php/insere-habitante.php",
+				url: "../php/insere-habitante.php",
 				data: formData,
 				// cache: false,
 				// dataType: "json",
