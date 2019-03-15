@@ -4,6 +4,7 @@
 	$sobrenome =  $_POST["sobrenome"];
 	$dataNasc =      $_POST["dataNasc"];
 	$sexo =      $_POST["sex"];
+	$casa =      $_POST["casa"];
 
 	$endereco = "localhost";
 	$usuario_banco = "root";
