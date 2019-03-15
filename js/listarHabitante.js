@@ -1,11 +1,11 @@
 
 $(document).ready(function(){
 
-    listaResidencia();
+    listaHabitante();
 
 });
 
-function listaResidencia(){
+function listaHabitante(){
     $.ajax({
         type:"POST",
         dataType: "json",

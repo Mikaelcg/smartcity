@@ -5,9 +5,9 @@
 	$dataNasc =      $_POST["dataNasc"];
 	$sexo =      $_POST["sex"];
 
-	$endereco = "localhost";
+	$endereco = "localhost:8889";
 	$usuario_banco = "root";
-	$senha_banco = "";
+	$senha_banco = "root";
 	$nome_banco = "banco_bsi";
 
 	$conexao = mysqli_connect($endereco, $usuario_banco, $senha_banco, $nome_banco);
