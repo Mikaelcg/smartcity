@@ -18,7 +18,7 @@
 
 <body>
 	<div class="wrapper">
-		<form class="register" method="post">
+		<form class="register" method="post" id="register">
 			<p class="title">Registrar</p>
 			<input type="text" placeholder="Insira seu username" autofocus id="username" name="username"/>
             <i class="fa fa-user"></i>
@@ -29,7 +29,7 @@
             <input type="password" placeholder="Repita sua senha" id="repeat-password" name="repeat-password"/>
 			<i class="fa fa-key"></i>
 			<a href="#">Esqueceu sua senha?</a>
-			<button id="registrar" type="submit">
+			<button id="registrar" type="submit" form="register">
 				<span class="state">Registrar</span>
 			</button>
         </form>

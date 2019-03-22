@@ -5,10 +5,9 @@ $(document).ready(function(){
         var senha = $.MD5($("#password").val());
         var repetir_senha = $.MD5($("#repeat-password").val());;
 
-        alert(senha);
-
         var formData = $(this).serialize();
-
+        alert(formData);
+        
         $.ajax({
             type:"POST",
             url: "../php/registrar-usuario.php",
