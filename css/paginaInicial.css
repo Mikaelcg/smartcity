@@ -4,18 +4,16 @@
 	padding: 0;
 }
 
-body {
-	font-size: 16px;
-	background-color: rgb(237, 248, 250);
-  }
+body{
+	background: url("../imagens/sf-bg.jpg") 50% fixed;
+}
 
 .menu{
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	border: 1px solid black;
 	padding:1rem;
-	background-color: rgb(69, 148, 240);
+	background: rgba(0, 0, 0, 0.2);
 }
 
 .container{
@@ -25,5 +23,6 @@ body {
 	text-align: center;
 	flex-direction: column;
 	height: 100%;
+	color: #fff;
 }
   
