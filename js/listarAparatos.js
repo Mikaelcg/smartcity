@@ -19,7 +19,7 @@ function listaAparatos(){
             for(var i = 0; i < array["aparatodomestico"].length; i++){
                 conteudo_aparatos += "<tr>";
                 conteudo_aparatos += "<td>" + array["aparatodomestico"][i]["aparato"] + "</td>";
-                conteudo_aparatos += "<td>" + array["aparatodomestico"][i]["residenciaAparato"] + "</td>";
+                conteudo_aparatos += "<td>" + array["aparatodomestico"][i]["id_residencia"] + "</td>";
                 conteudo_aparatos += "</tr>";
             }
 

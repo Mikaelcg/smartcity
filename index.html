@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Smart Cities</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Listar Residências</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="css/login.css" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/login.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
+
 <body>
-    <div class="subscribe-container">   
-        <div class="mc_embed_signup">
-            <h3>Bem-Vindo ao <br> Smart Cities</h3>
-            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d6c6ce7da87357b90e9859e81_2091bdd722" tabindex="-1" value=""></div>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='paginas/cadastroPessoa.html'">Cadastrar Habitantes</button>
-            <button type="button" class="btn btn-primary mt-2" onclick="window.location.href='paginas/cadastroResidencia.html'">Cadastrar Residências</button>
-            <button type="button" class="btn btn-primary mt-2" onclick="window.location.href='paginas/cadastroAparatoDomestico.html'">Cadastrar Aparato</button>
-            <button type="button" class="btn btn-primary mt-2" onclick="window.location.href='paginas/listarResidencia.html'">Listar Residências</button>
-            <button type="button" class="btn btn-primary mt-2" onclick="window.location.href='paginas/listarHabitante.html'">Listar Habitantes</button>
-            <button type="button" class="btn btn-primary mt-2" onclick="window.location.href='paginas/listarAparatos.html'">Listar Aparatos Dom.</button>
-        </div>
-    </div>
+	<div class="wrapper">
+		<form class="login">
+			<p class="title">Log in</p>
+			<input type="text" placeholder="Username" autofocus />
+			<i class="fa fa-user"></i>
+			<input type="password" placeholder="Password" />
+			<i class="fa fa-key"></i>
+			<a href="#">Forgot your password?</a>
+			<button onclick="window.location.href='paginas/paginaInicial.html'">
+				<i class="spinner"></i>
+				<span class="state">Log in</span>
+			</button>
+		</form>
+		<button onclick="window.location.href='paginas/paginaInicial.html'">
+			<i class="spinner"></i>
+			<span class="state">Log in</span>
+		</button>
+		</p>
+	</div>
 </body>
+
 </html>

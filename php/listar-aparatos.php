@@ -1,5 +1,5 @@
 <?php
-    $endereco = "localhost:8889";
+    $endereco = "localhost:8888";
 	$usuario_banco = "root";
 	$senha_banco = "root";
 	$nome_banco = "banco_bsi";
@@ -12,10 +12,12 @@
 
     while($registro = mysqli_fetch_assoc($dados)){
         $retorno["aparatodomestico"][$cont]["aparato"] = $registro['aparato'];
-        $retorno["aparatodomestico"][$cont]["residenciaAparato"] = $registro['residenciaAparato'];
+        $retorno["aparatodomestico"][$cont]["id_residencia"] = $registro['id_residencia'];
 
         $cont++;
     }
 
-    echo json_encode($retorno)
+    echo($registro['id_residencia']);
+    
+    echo json_encode($retorno);
 ?>
