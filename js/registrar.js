@@ -2,7 +2,7 @@ $(document).ready(function(){
     $("#register").submit(function(e){
         var nome = $("#username").val();
         var email = $("#email").val();
-        var senha = $.MD5($("#password").val());
+        var senha = $("password").val($.MD5($("#password").val()));
         var repetir_senha = $.MD5($("#repeat-password").val());;
 
         var formData = $(this).serialize();
