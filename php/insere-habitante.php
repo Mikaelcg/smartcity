@@ -6,11 +6,7 @@
 	$sexo =      $_POST["sex"];
 	$casa =      $_POST["casa"];
 
-<<<<<<< HEAD
 	$endereco = "localhost:8889";
-=======
-	$endereco = "localhost";
->>>>>>> development
 	$usuario_banco = "root";
 	$senha_banco = "";
 	$nome_banco = "banco_bsi";

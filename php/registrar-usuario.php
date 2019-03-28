@@ -2,7 +2,6 @@
     $username  =       $_POST["username"];
     $email =       $_POST["email"]; 
     $password =       $_POST["password"]; 
-    $repeat_password =       $_POST["repeat-password"]; 
 
     $endereco = "localhost:8889";
     $usuario_banco = "root";
@@ -13,5 +12,4 @@
         
     mysqli_query($conexao, " INSERT INTO usuario(username, email, senha) VALUES('$username','$email','$password')");
 
-    echo($username, $email, $password);
 ?>
