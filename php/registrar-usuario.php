@@ -1,8 +1,17 @@
 <?php
-$username  =       $_POST["username"];
-$email =       $_POST["email"]; 
-$password =       $_POST["password"]; 
-$repeat_password =       $_POST["repeat-password"]; 
+    $username  =       $_POST["username"];
+    $email =       $_POST["email"]; 
+    $password =       $_POST["password"]; 
+    $repeat_password =       $_POST["repeat-password"]; 
 
-echo($password);
+    $endereco = "localhost:8889";
+    $usuario_banco = "root";
+    $senha_banco = "root";
+    $nome_banco = "banco_bsi";
+
+    $conexao = mysqli_connect($endereco, $usuario_banco, $senha_banco, $nome_banco);
+        
+    mysqli_query($conexao, " INSERT INTO usuario(username, email, senha) VALUES('$username','$email','$password')");
+
+    echo($username, $email, $password);
 ?>
