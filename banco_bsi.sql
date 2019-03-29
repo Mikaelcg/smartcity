@@ -2,7 +2,7 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8888
+-- Host: localhost
 -- Generation Time: Mar 22, 2019 at 01:23 AM
 -- Server version: 5.7.24-log
 -- PHP Version: 7.2.10

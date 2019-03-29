@@ -6,7 +6,7 @@
 	$sexo =      $_POST["sex"];
 	$casa =      $_POST["casa"];
 
-	$endereco = "localhost:8889";
+	$endereco = "localhost";
 	$usuario_banco = "root";
 	$senha_banco = "";
 	$nome_banco = "banco_bsi";

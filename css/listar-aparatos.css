@@ -12,3 +12,44 @@ body {
 table, td, tr, th{
     border: 1px solid black;
 }
+
+*{
+	font-family: "Roboto";
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: url("../imagens/sf-bg.jpg") 50% fixed;
+}
+
+.menu{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding:1rem;
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.content{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	height: 100%;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    margin-top: 5em;
+	padding: 5em;
+	animation: fadein 1s;
+}
+
+@keyframes fadein {
+	from {
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
+}

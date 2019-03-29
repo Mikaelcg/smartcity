@@ -40,16 +40,16 @@ $(document).ready(function () {
 						$state.html('Welcome back!');
 						setTimeout(function(){
 							location.replace('paginas/paginaInicial.html');
+						},11000)
 
-						},2000)
-						setTimeout(function () {
-							location.replace('paginas/paginaInicial.html')
-							$state.html('Log in');
-							$this.removeClass('ok loading');
-							working = false;
-						}, 4000);
+						// setTimeout(function () {
+						// 	location.replace('paginas/paginaInicial.html')
+						// 	$state.html('Log in');
+						// 	$this.removeClass('ok loading');
+						// 	working = false;
+						// }, 4000);
 						
-					}, 3000);
+					}, 2000);
 				}else{
 					setTimeout(function () {
 						$this.addClass('error');
@@ -57,11 +57,11 @@ $(document).ready(function () {
 						
 						setTimeout(function () {
 							$state.html('Log in');
-							$this.removeClass('ok loading');
+							$this.removeClass('error loading');
 							working = false;
 						}, 4000);
 						
-					}, 3000);
+					}, 2000);
 				}
             }
 		});
