@@ -49,6 +49,9 @@ body {
 .login.ok button {
   background-color: #8bc34a;
 }
+.login.error button {
+  background-color: #e41414;
+}
 .login.ok button .spinner {
   border-radius: 0;
   border-top-color: transparent;
