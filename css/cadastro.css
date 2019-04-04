@@ -231,3 +231,13 @@ svg > .checkmark-check {
     display: none;
   }
 }
+
+.select{
+  margin-left: 150px;
+  margin-bottom: 30px;
+}
+
+.selectQuantidade {
+  margin-top: 20px;
+  margin-left: 180px;
+}
