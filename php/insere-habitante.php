@@ -6,9 +6,9 @@
 	$sexo =      $_POST["sex"];
 	$casa =      $_POST["casa"];
 
-	$endereco = "localhost";
+	$endereco = "localhost:8889";
 	$usuario_banco = "root";
-	$senha_banco = "";
+	$senha_banco = "root";
 	$nome_banco = "banco_bsi";
 
 	$conexao = mysqli_connect($endereco, $usuario_banco, $senha_banco, $nome_banco);
@@ -21,7 +21,7 @@
 
 	echo ($id);
 
-	mysqli_query($conexao, " INSERT INTO morador(cod_pes, cod_res) VALUES('$id', '$casa') ");
+	mysqli_query($conexao, " INSERT INTO morador(id_habitante, id_residencia) VALUES($id, $casa) ");
 
 	echo (" INSERT INTO morador(cod_pes, cod_res) VALUES('$id', '$casa') ");
 ?>
