@@ -11,6 +11,7 @@
     $cont = 0;
 
     while($registro = mysqli_fetch_assoc($dados)){
+        $retorno["residencia"][$cont]["id"] = $registro['id'];
         $retorno["residencia"][$cont]["endereco"] = $registro['endereco'];
         $retorno["residencia"][$cont]["numero"] = $registro['numero'];
         $retorno["residencia"][$cont]["complemento"] = $registro['complemento'];

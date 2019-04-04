@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
 	$(".mc_embed_signup > form").submit(function(e) {
 		e.preventDefault(); // Prevent a new window from opening upon clicking 'Subscribe now' button
 
@@ -26,7 +27,7 @@ $(document).ready(function() {
 				url: "../php/insere-residencia.php",
 				data: formData,
 				// cache: false,
-				// dataType: "json",
+				// dataType: "json",'
 				// contentType: "application/json; charset=utf-8",
 				// encode: true,
 
@@ -50,4 +51,8 @@ $(document).ready(function() {
 
 		return; // No go on form...
 	}); // end of submit function
+
+
 });
+
+
