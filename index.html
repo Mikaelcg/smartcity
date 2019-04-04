@@ -4,31 +4,35 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Listar Residências</title>
+	<title>Login</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="css/login.css" />
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src='js/jquery.md5.js'></script>
 	<script src="js/login.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
 <body>
 	<div class="wrapper">
-		<form class="login">
+		<form class="login" method="post">
 			<p class="title">Log in</p>
-			<input type="text" placeholder="Usuário" autofocus />
+			<input type="text" placeholder="Usuário" id="username" name="username" autofocus />
 			<i class="fa fa-user"></i>
-			<input type="password" placeholder="Senha" />
+			<input type="password" placeholder="Senha" id="password" name="password" />
 			<i class="fa fa-key"></i>
 			<a href="#">Esqueceu sua senha?</a>
-			<button>
+			
+			<button type="submit">
 				<i class="spinner"></i>
 				<span class="state">Entrar</span>
 			</button>
 		</form>
+
 		<button onclick="window.location.href='paginas/paginaInicial.html'">
 			<i class="spinner"></i>
 			<span class="state">Entrar</span>

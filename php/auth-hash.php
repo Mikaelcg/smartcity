@@ -1,21 +1,30 @@
 <?php
+<<<<<<< HEAD
 
     $hash =       $_POST["password"]; 
 
+=======
+    $username = $_POST["username"];
+    $password = $_POST["password"]; 
+>>>>>>> ec584bd671d370e3b48e25c30007ea9029f577c9
     $endereco = "localhost:8889";
 	$usuario_banco = "root";
 	$senha_banco = "root";
     $nome_banco = "banco_bsi";
     
     $conexao = mysqli_connect($endereco, $usuario_banco, $senha_banco, $nome_banco);
+    
+    $dados = mysqli_query($conexao, "SELECT * FROM usuario");
+    
+    $retorno = 0;
+    
+    while($user = mysqli_fetch_assoc($dados)){
+        
+        if( $user['username'] == $username && $user['senha'] == $password){
+            $retorno = 1;
+        }
+    }
 
-    $verHash = mysqli_query($conexao, "SELECT * FROM usuario WHERE senha = '$hash");
-
-    if(mysql_num_rows($verHash) == 1){    
-        echo "Usuário autenticado";
-       }
-       else{
-        echo "Usuário não cadastrado"
-       }
+    echo($retorno)
 
 ?>

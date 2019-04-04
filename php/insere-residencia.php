@@ -12,8 +12,8 @@
 
 	$conexao = mysqli_connect($endereco, $usuario_banco, $senha_banco, $nome_banco);
 
-    echo(" INSERT INTO residencia(endereco, numero, complemento, metragem, cidade) VALUES('$enderecoResidencia',$numero,'$complemento', $metragem, '$cidade') ");
-     
+	
 	mysqli_query($conexao, " INSERT INTO residencia(endereco, numero, complemento, metragem, cidade) VALUES('$enderecoResidencia',$numero,'$complemento', $metragem, '$cidade') ");
+    echo(" INSERT INTO residencia(endereco, numero, complemento, metragem, cidade) VALUES('$enderecoResidencia',$numero,'$complemento', $metragem, '$cidade') ");
 
 ?>

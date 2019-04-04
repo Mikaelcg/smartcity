@@ -5,7 +5,7 @@
 	require 'PHPMailerAutoload.php';
 
 	$message = "Por favor clique no link abaixo para confirmar seu cadastro. <br><br> ";
-    $message .= "http://localhost:8888/copelmais/php/confirmar-cadastro.php?code=$codigo";
+    $message .= "http://localhost/copelmais/php/confirmar-cadastro.php?code=$codigo";
 
 	$mail= new PHPMailer;
 	$mail->IsSMTP();        

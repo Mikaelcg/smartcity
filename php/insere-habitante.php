@@ -21,7 +21,7 @@
 
 	echo ($id);
 
-	mysqli_query($conexao, " INSERT INTO morador(cod_pes, cod_res) VALUES('$id', '$casa') ");
+	mysqli_query($conexao, " INSERT INTO morador(id_habitante, id_residencia) VALUES($id, $casa) ");
 
 	echo (" INSERT INTO morador(cod_pes, cod_res) VALUES('$id', '$casa') ");
 ?>

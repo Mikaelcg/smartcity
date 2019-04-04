@@ -12,22 +12,40 @@
     <script src="../js/listarHabitante.js"></script>
 </head>
 <body>
-    <div class="subscribe-container">
-        <!-- Begin MailChimp Signup Form -->
-        <div class="container d-flex justify-center flex-column align-center mt-3">
-            <h1 style="text-align: center;">Lista de habitantes cadastrados</h1>
-
-            <table id="habitantes" style="border: 1px solid black;" cellspacing="0">
-                <tr style="border: 1px solid black;">
-                    <th>Nome</th>
-                    <th>Sobrenome</th>
-                    <th>Nascimento</th>
-                    <th>Sexo</th>
-                </tr>
-            </table>
-
-            <button type="button" class="btn btn-primary mt-2" onclick="window.location.href='paginaInicial.html'">Voltar</button>
+    <div class="menu">
+        <button type="button" class="btn btn-primary" onclick="window.location.href='cadastroPessoa.html'">Cadastrar
+            Habitantes</button>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='cadastroResidencia.html'">Cadastrar
+            Residências</button>
+        <button type="button" class="btn btn-primary"
+            onclick="window.location.href='cadastroAparatoDomestico.html'">Cadastrar Aparato</button>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='listarResidencia.html'">Listar
+            Residências</button>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='listarHabitante.html'">Listar
+            Habitantes</button>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='listarAparatos.html'">Listar
+            Aparatos Dom.</button>
+    </div>
+    
+    <div class="content">
+        <div class="subscribe-container">
+            <!-- Begin MailChimp Signup Form -->
+            <div class="container d-flex justify-center flex-column align-center mt-3">
+                <h1 style="text-align: center;">Lista de habitantes cadastrados</h1>
+    
+                <table id="habitantes"  cellspacing="0" class="table table-hover table-striped table-dark">
+                    <tr style="border: 1px solid black;">
+                        <th>Nome</th>
+                        <th>Sobrenome</th>
+                        <th>Nascimento</th>
+                        <th>Sexo</th>
+                    </tr>
+                </table>
+    
+                <button type="button" class="btn btn-primary mt-2" onclick="window.location.href='paginaInicial.html'">Voltar</button>
+            </div>
         </div>
     </div>
+    
 </body>
 </html>
