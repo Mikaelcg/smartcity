@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+	listaIdResidencia();
+	
 	$(".mc_embed_signup > form").submit(function(e) {
 		e.preventDefault(); // Prevent a new window from opening upon clicking 'Subscribe now' button
 
@@ -51,3 +53,25 @@ $(document).ready(function() {
 		return; // No go on form...
 	}); // end of submit function
 });
+
+function listaIdResidencia(){
+	$.ajax({
+		type:"POST",
+		dataType: "json",
+		url: "../php/listar-residencia.php",
+
+		success: function(array){
+			console.log(array["residencia"]);
+			
+			var conteudo_residencias = '';
+
+			for(var i = 0; i < array["residencia"].length; i++){
+				conteudo_residencias += "<option>" + array["residencia"][i]["id"] + "</option>";
+
+			}
+
+
+			$("#residencias").append(conteudo_residencias);
+		}
+	})
+}
