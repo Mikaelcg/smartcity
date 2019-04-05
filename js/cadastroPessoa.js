@@ -66,7 +66,7 @@ function listaIdResidencia(){
 			var conteudo_residencias = '';
 
 			for(var i = 0; i < array["residencia"].length; i++){
-				conteudo_residencias += "<option>" + array["residencia"][i]["id"] + "</option>";
+				conteudo_residencias += '<option value=' + '"' + array["residencia"][i]["id"] + '">' + array["residencia"][i]["id"] + ' - ' + array["residencia"][i]["endereco"] +', ' + array["residencia"][i]["numero"]  +', ' + array["residencia"][i]["cidade"] + "</option>";
 
 			}
 

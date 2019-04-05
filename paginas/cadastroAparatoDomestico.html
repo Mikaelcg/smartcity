@@ -44,23 +44,39 @@
                     target="_blank" novalidate>
                     <div id="mc_embed_signup_scroll">
 
-                        <div class="mc-field-group">
-                            <select name="aparato" id="aparato" class="select" id="name" >
-                                <option></option>
-                                <option>Tv</option>
-                                <option>Geladeira</option>
-                                <option>Forno</option>
-                            </select>
+                        <div class="mc-field-group mt-2">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Tipo aparato</label>
+                                </div>
+                                <select class="custom-select" name="aparato">
+                                        <option>TV</option>
+                                        <option>Geladeira</option>
+                                        <option>Forno</option>
+                                        <option>Microondas</option>
+                                        <option>Computador</option>
+                                        <option>Ventilador</option>
+                                        <option>Ar-condicionado</option>
+                                </select>
+                            </div>
                         </div>
 
-                        
-                        <h3>Residência</h3>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Consumo</span>
+                            </div>
+                            <input type="number" name="consumo" class="form-control" placeholder="Consumo (em kw/h)" aria-label="Consumo" aria-describedby="basic-addon1">
+                        </div>  
 
                         <div class="mc-field-group">
-                            <select name="selectResidencia" id="residencias" class="selectQuantidade">
-                                
-                            </select>
-
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Residência</label>
+                                </div>
+                                <select class="custom-select" id="residencias" name="residencia">
+   
+                                </select>
+                            </div>
                         </div>
 
                         <p class="error-message">Por favor, preencha todos os campos.</p>

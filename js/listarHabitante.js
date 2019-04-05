@@ -22,6 +22,7 @@ function listaHabitante(){
                 conteudo_habitantes += "<td>" + array["habitante"][i]["sobrenome"] + "</td>";
                 conteudo_habitantes += "<td>" + array["habitante"][i]["nascimento"] + "</td>";
                 conteudo_habitantes += "<td>" + array["habitante"][i]["sexo"] + "</td>";
+                conteudo_habitantes += "<td>" + array["habitante"][i]["id_residencia"] + "</td>";
                 conteudo_habitantes += "</tr>";
             }
 

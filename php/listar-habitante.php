@@ -6,7 +6,7 @@
 
     $conexao = mysqli_connect($endereco, $usuario_banco, $senha_banco, $nome_banco);
     
-    $dados = mysqli_query($conexao, "SELECT * FROM habitante");
+    $dados = mysqli_query($conexao, "SELECT * FROM habitante h join morador m where h.id = m.id_habitante;");
 
     $cont = 0;
 
@@ -15,6 +15,7 @@
         $retorno["habitante"][$cont]["sobrenome"] = $registro['sobrenome'];
         $retorno["habitante"][$cont]["nascimento"] = $registro['nascimento'];
         $retorno["habitante"][$cont]["sexo"] = $registro['sexo'];
+        $retorno["habitante"][$cont]["id_residencia"] = $registro['id_residencia'];
         
         $cont++;
     }

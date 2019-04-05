@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 04, 2019 at 10:56 PM
+-- Generation Time: Apr 05, 2019 at 01:39 AM
 -- Server version: 5.7.24-log
 -- PHP Version: 7.2.10
 
@@ -35,13 +35,6 @@ CREATE TABLE `aparatodomestico` (
   `consumo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `aparatodomestico`
---
-
-INSERT INTO `aparatodomestico` (`id`, `aparato`, `id_residencia`, `consumo`) VALUES
-(1, 'nome', 1, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -68,24 +61,6 @@ CREATE TABLE `habitante` (
   `sexo` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `habitante`
---
-
-INSERT INTO `habitante` (`id`, `nome`, `sobrenome`, `nascimento`, `sexo`) VALUES
-(1, '123', '123', '1322-03-12', 'Masculino'),
-(2, 'Lucas', 'Santos', '1999-03-08', 'Masculino'),
-(3, '', '', '', ''),
-(4, '123', '123', '2222-02-22', 'Masculino'),
-(5, 'mikrls', 'fsd', '1212-12-12', 'Masculino'),
-(6, '99999', 'mikarulsadasld', '9999-09-09', 'Masculino'),
-(7, 'qwe', 'qwe', '1111-11-11', 'Masculino'),
-(8, 'ewrwer', 'erwer', '2222-02-22', 'Masculino'),
-(9, 'qwe', 'qwe', '2222-02-22', 'Masculino'),
-(10, 'rwerwer', 'rwerwe', '2222-02-22', 'Masculino'),
-(11, 'utyu', 'utyu', '2222-02-22', 'Masculino'),
-(12, 'iuyui', 'iyuiy', '2222-02-22', 'Masculino');
-
 -- --------------------------------------------------------
 
 --
@@ -102,7 +77,9 @@ CREATE TABLE `morador` (
 --
 
 INSERT INTO `morador` (`id_habitante`, `id_residencia`) VALUES
-(12, 1);
+(12, 1),
+(17, 1),
+(21, 1);
 
 -- --------------------------------------------------------
 
@@ -128,15 +105,8 @@ CREATE TABLE `residencia` (
   `complemento` varchar(45) NOT NULL,
   `metragem` varchar(45) NOT NULL,
   `cidade` varchar(45) NOT NULL,
-  `id_cidade` int(11) NOT NULL
+  `id_cidade` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='	';
-
---
--- Dumping data for table `residencia`
---
-
-INSERT INTO `residencia` (`id`, `endereco`, `numero`, `complemento`, `metragem`, `cidade`, `id_cidade`) VALUES
-(1, '123', '123', '123', '123', 'Curitiba', 0);
 
 -- --------------------------------------------------------
 
@@ -200,7 +170,6 @@ ALTER TABLE `habitante`
 -- Indexes for table `morador`
 --
 ALTER TABLE `morador`
-  ADD KEY `id_habitante_idx` (`id_habitante`),
   ADD KEY `id_residencia_idx` (`id_residencia`);
 
 --
@@ -236,7 +205,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `aparatodomestico`
 --
 ALTER TABLE `aparatodomestico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `cidade`
@@ -248,7 +217,7 @@ ALTER TABLE `cidade`
 -- AUTO_INCREMENT for table `habitante`
 --
 ALTER TABLE `habitante`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `pais`
@@ -260,7 +229,7 @@ ALTER TABLE `pais`
 -- AUTO_INCREMENT for table `residencia`
 --
 ALTER TABLE `residencia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `unidade_federacao`
@@ -273,22 +242,6 @@ ALTER TABLE `unidade_federacao`
 --
 ALTER TABLE `usuario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `aparatodomestico`
---
-ALTER TABLE `aparatodomestico`
-  ADD CONSTRAINT `id_residencia` FOREIGN KEY (`id_residencia`) REFERENCES `residencia` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `morador`
---
-ALTER TABLE `morador`
-  ADD CONSTRAINT `id_habitante` FOREIGN KEY (`id_habitante`) REFERENCES `habitante` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
