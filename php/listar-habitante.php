@@ -7,7 +7,6 @@
     $conexao = mysqli_connect($endereco, $usuario_banco, $senha_banco, $nome_banco);
     
     $dados = mysqli_query($conexao, "SELECT * FROM habitante h join morador m where h.id = m.id_habitante;");
-
     $cont = 0;
 
     while($registro = mysqli_fetch_assoc($dados)){
