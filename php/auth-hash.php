@@ -1,12 +1,6 @@
 <?php
-<<<<<<< HEAD
-
-    $hash =       $_POST["password"]; 
-
-=======
     $username = $_POST["username"];
     $password = $_POST["password"]; 
->>>>>>> ec584bd671d370e3b48e25c30007ea9029f577c9
     $endereco = "localhost:8889";
 	$usuario_banco = "root";
 	$senha_banco = "root";

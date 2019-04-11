@@ -1,9 +1,9 @@
 <?php
 	$enderecoResidencia =       $_POST["endereco"];
-	$numero =  $_POST["numero"];
-	$complemento =     $_POST["complemento"];
-	$metragem =     $_POST["metragem"];
-	$cidade =     $_POST["cidade"];
+	$numero =                   $_POST["numero"];
+	$complemento =              $_POST["complemento"];
+	$metragem =                 $_POST["metragem"];
+	$cidade =                   $_POST["cidade"];
 	
 	$endereco = "localhost:8889";
 	$usuario_banco = "root";
