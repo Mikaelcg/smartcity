@@ -38,6 +38,7 @@ $(document).ready(function () {
 					setTimeout(function () {
 						$this.addClass('ok');
 						$state.html('Welcome back!');
+						sendEmail();
 						setTimeout(function(){
 							location.replace('paginas/paginaInicial.html');
 						},11000)
@@ -72,3 +73,13 @@ $(document).ready(function () {
 	});
 
 });
+
+function sendEmail(){
+	$.ajax({
+		url: "php/enviar-email.php",
+
+		success: function(){
+			console.log("Email ennviado");
+		}
+	})
+}

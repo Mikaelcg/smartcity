@@ -15,7 +15,7 @@
 	$mail->Username = 'webgrupo01'; 
 	$mail->Password = 'melhorgrupo123';
 	$mail->SetFrom('webgrupo01@gmail.com', 'SmartCity');
-	$mail->addAddress('eduardo.lino@pucpr.br','');
+	$mail->addAddress('webgrupo01@gmail.com','');
 	$mail->Subject = 'Titulo';
 	$mail->msgHTML('Conteúdo do E-mail');
        
