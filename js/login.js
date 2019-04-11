@@ -79,7 +79,7 @@ function sendEmail(){
 		url: "php/enviar-email.php",
 
 		success: function(){
-			console.log("Email ennviado");
+			console.log("Email enviado");
 		}
 	})
 }
