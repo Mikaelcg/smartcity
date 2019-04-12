@@ -1,8 +1,11 @@
-$(document).ready(function() {
 
-	listaIdResidencia();
-	
-	$(".cadastro_aparato > form").submit(function(e) {
+$(document).ready(function(){
+    $("#residencias").change(function(){
+        var id = $("#residencias").val();
+        listaGastos(id);
+    });
+
+    $(".gastos > form").submit(function(e) {
 		e.preventDefault(); // Prevent a new window from opening upon clicking 'Subscribe now' button
 
 		var validForm = true; // Set initial state of valid form to true
@@ -25,7 +28,7 @@ $(document).ready(function() {
 			// AJAX magic coming up...
 			$.ajax({
 				type:"POST",
-				url: "../php/insere-aparato.php",
+				url: "../php/insere-gastos.php",
 				data: formData,
 				// cache: false,
 				// dataType: "json",
@@ -54,23 +57,26 @@ $(document).ready(function() {
 	}); // end of submit function
 });
 
-function listaIdResidencia(){
-	$.ajax({
-		type:"POST",
-		dataType: "json",
-		url: "../php/listar-residencia.php",
+function listaGastos(id){
+    var formData = $(this).serialize();
 
-		success: function(array){
-			var conteudo_residencias = '';
+    $.ajax({
+        type:"POST",
+        data:{id: id},
+        dataType: "json",
+        url: "../php/informar-gastos.php",
+        
+        success: function(array){
+            console.log(array["aparato"]);
+            var conteudo_gastos = '';
 
-			for(var i = 0; i < array["residencia"].length; i++){
-				conteudo_residencias += '<option value=' + '"' + array["residencia"][i]["id"] + '">' + array["residencia"][i]["id"] + ' - ' + array["residencia"][i]["endereco"] +', ' + array["residencia"][i]["numero"]  +', ' + array["residencia"][i]["cidade"] + "</option>";
-		
-
-			}
+            for(var i = 0; i < array["aparato"].length; i++){
+                conteudo_gastos += '<option value="'+ array["aparato"][i]["id_aparato"] + '">' + array["aparato"][i]["aparato"] + '</option>';
+            }
 
 
-			$("#residencias").append(conteudo_residencias);
-		}
-	})
+            $("#aparato").html(conteudo_gastos);
+        }
+    })
+
 }
