@@ -12,7 +12,7 @@ function listaAparatos(){
         url: "../php/listar-aparatos.php",
 
         success: function(array){
-            console.log(array["aparatodomestico"]);
+            // console.log(array["aparatodomestico"]);
             
             var conteudo_aparatos = '';
 

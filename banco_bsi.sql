@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 05, 2019 at 01:39 AM
+-- Generation Time: Apr 12, 2019 at 01:35 AM
 -- Server version: 5.7.24-log
 -- PHP Version: 7.2.10
 
@@ -35,6 +35,28 @@ CREATE TABLE `aparatodomestico` (
   `consumo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `aparatodomestico`
+--
+
+INSERT INTO `aparatodomestico` (`id`, `aparato`, `id_residencia`, `consumo`) VALUES
+(7, 'TV', 4, 700),
+(8, 'Geladeira', 4, 800),
+(9, 'Ar-condicionado', 4, 200),
+(10, 'Geladeira', 5, 100),
+(11, 'Microondas', 5, 400),
+(12, '10', 5, 2),
+(13, '7', 4, 1),
+(14, '7', 4, 213),
+(15, '10', 5, 12313),
+(16, '7', 4, 123),
+(17, '7', 4, 123),
+(18, '7', 4, 123),
+(19, '9', 4, 123),
+(20, '7', 4, 12344455),
+(21, '8', 4, 12313),
+(22, '7', 4, 123);
+
 -- --------------------------------------------------------
 
 --
@@ -50,6 +72,30 @@ CREATE TABLE `cidade` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `consumo_eletrico`
+--
+
+CREATE TABLE `consumo_eletrico` (
+  `id_residencia` int(11) NOT NULL,
+  `id_aparato` int(11) NOT NULL,
+  `tempo_consumo` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `consumo_eletrico`
+--
+
+INSERT INTO `consumo_eletrico` (`id_residencia`, `id_aparato`, `tempo_consumo`) VALUES
+(4, 9, 123),
+(4, 7, 12344455),
+(4, 8, 12313),
+(4, 7, 123),
+(4, 7, 12313),
+(5, 11, 555555);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `habitante`
 --
 
@@ -60,6 +106,13 @@ CREATE TABLE `habitante` (
   `nascimento` varchar(45) NOT NULL,
   `sexo` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `habitante`
+--
+
+INSERT INTO `habitante` (`id`, `nome`, `sobrenome`, `nascimento`, `sexo`) VALUES
+(23, '222', '222', '2222-02-22', 'Masculino');
 
 -- --------------------------------------------------------
 
@@ -79,7 +132,8 @@ CREATE TABLE `morador` (
 INSERT INTO `morador` (`id_habitante`, `id_residencia`) VALUES
 (12, 1),
 (17, 1),
-(21, 1);
+(21, 1),
+(23, 4);
 
 -- --------------------------------------------------------
 
@@ -107,6 +161,14 @@ CREATE TABLE `residencia` (
   `cidade` varchar(45) NOT NULL,
   `id_cidade` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='	';
+
+--
+-- Dumping data for table `residencia`
+--
+
+INSERT INTO `residencia` (`id`, `endereco`, `numero`, `complemento`, `metragem`, `cidade`, `id_cidade`) VALUES
+(4, 'Sete', '7', 'sete7', '700', 'Curitiba', NULL),
+(5, 'Oito', '8', 'oito8', '800', 'Curitiba', NULL);
 
 -- --------------------------------------------------------
 
@@ -205,7 +267,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `aparatodomestico`
 --
 ALTER TABLE `aparatodomestico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `cidade`
@@ -217,7 +279,7 @@ ALTER TABLE `cidade`
 -- AUTO_INCREMENT for table `habitante`
 --
 ALTER TABLE `habitante`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `pais`
@@ -229,7 +291,7 @@ ALTER TABLE `pais`
 -- AUTO_INCREMENT for table `residencia`
 --
 ALTER TABLE `residencia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `unidade_federacao`
