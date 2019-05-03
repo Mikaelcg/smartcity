@@ -10,7 +10,7 @@ function listaGastos(){
         type:"POST",
         dataType: "json",
         url: "../php/listar-gastos.php",
-
+        
         success: function(array){
             
             var conteudo_gastos = '';
@@ -21,7 +21,6 @@ function listaGastos(){
                 conteudo_gastos += "<td>" + array["gastos"][i]["total"] + "</td>";
                 conteudo_gastos += "</tr>";
             }
-
 
             $("#gastos").append(conteudo_gastos);
         }

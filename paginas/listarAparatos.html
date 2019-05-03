@@ -21,10 +21,10 @@
                 Relatórios / Gráficos
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" onclick="window.location.href='gastosResidencia.html'">Listar Gastos da Residencia</a>
-              <a class="dropdown-item" onclick="window.location.href='listarResidencia.html'">Listar Residências</a>
-              <a class="dropdown-item" onclick="window.location.href='listarHabitante.html'">Listar Habitantes</a>
-              <a class="dropdown-item" onclick="window.location.href='listarAparatos.html'">Listar Aparatos Dom.</a> 
+            <a class="dropdown-item" onclick="window.location.href='gastosResidencia.html'">Listar Gastos da Residencia</a>
+            <a class="dropdown-item" onclick="window.location.href='listarResidencia.html'">Listar Residências</a>
+            <a class="dropdown-item" onclick="window.location.href='listarHabitante.html'">Listar Habitantes</a>
+            <a class="dropdown-item" onclick="window.location.href='listarAparatos.html'">Listar Aparatos Dom.</a> 
             </div>
         </div>
 
@@ -43,23 +43,27 @@
             </div>
         </div>
     </div>
-        
-    <div class="subscribe-container">
-        <!-- Begin MailChimp Signup Form -->
-        <div class="container d-flex justify-center flex-column align-center mt-3">
-            <h1 style="text-align: center;">Lista de aparatos domésticos cadastrados</h1>
-
-            <table id="aparatos" cellspacing="0" class="table table-hover table-striped table-dark">
-                <tr style="border: 1px solid black;">
-                    <th>Nome (tipo)</th>
-                    <th>Residência</th>
-                </tr>
-            </table>
-
-            <button type="button" class="btn btn-primary mt-2" onclick="window.location.href='paginaInicial.html'">Voltar</button>
+    <div class="content">
+        <div class="subscribe-container">
+            <!-- Begin MailChimp Signup Form -->
+            <div class="container d-flex justify-center flex-column align-center mt-3">
+                <h1 style="text-align: center;">Lista de aparatos domésticos cadastrados</h1>
+    
+                <table id="aparatos" cellspacing="0" class="table table-hover table-striped table-dark">
+                    <tr style="border: 1px solid black;">
+                        <th>ID Aparato</th>
+                        <th>Nome (tipo)</th>
+                        <th>ID Residência</th>
+                        <th>Consumo kW/h</th>
+                        <th>Tempo utilizado (em h)</th>
+                        <th>Total (kw/H * h)</th>
+                    </tr>
+                </table>
+    
+                <button type="button" class="btn btn-primary mt-2" onclick="window.location.href='paginaInicial.html'">Voltar</button>
+            </div>
         </div>
     </div>
-</div><div class="content">
-            
+        
 </body>
 </html>
