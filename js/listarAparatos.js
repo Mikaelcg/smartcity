@@ -18,8 +18,12 @@ function listaAparatos(){
 
             for(var i = 0; i < array["aparatodomestico"].length; i++){
                 conteudo_aparatos += "<tr>";
+                conteudo_aparatos += "<td>" + array["aparatodomestico"][i]["id"] + "</td>";
                 conteudo_aparatos += "<td>" + array["aparatodomestico"][i]["aparato"] + "</td>";
                 conteudo_aparatos += "<td>" + array["aparatodomestico"][i]["id_residencia"] + "</td>";
+                conteudo_aparatos += "<td>" + array["aparatodomestico"][i]["consumo"] + "</td>";
+                conteudo_aparatos += "<td>" + array["aparatodomestico"][i]["tempo"] + "</td>";
+                conteudo_aparatos += "<td>" + array["aparatodomestico"][i]["total"] + "</td>";
                 conteudo_aparatos += "</tr>";
             }
 

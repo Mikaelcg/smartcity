@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Smart Cities</title>
+    <script src="/smartcity/js/jquery-3.3.1.min.js"></script>
+    <script src="/smartcity/js/bootstrap/popper.min.js"></script>
+    <script src="/smartcity/js/bootstrap/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/paginaInicial.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -11,19 +14,55 @@
 </head>
 <body>
     <div class="menu">
+<<<<<<< HEAD
      
         <button type="button" class="btn btn-primary" onclick="window.location.href='cadastroPessoa.html'">Cadastrar Habitantes</button>
+=======
+
+        <div class="dropdown">
+            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Relatórios / Gráficos
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" onclick="window.location.href='gastosResidencia.html'">Listar Gastos da Residencia</a>
+              <a class="dropdown-item" onclick="window.location.href='listarResidencia.html'">Listar Residências</a>
+              <a class="dropdown-item" onclick="window.location.href='listarHabitante.html'">Listar Habitantes</a>
+              <a class="dropdown-item" onclick="window.location.href='listarAparatos.html'">Listar Aparatos Dom.</a> 
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Cadastrar
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" onclick="window.location.href='cadastroPessoa.html'">Cadastrar Habitantes</a>
+                <a class="dropdown-item" onclick="window.location.href='cadastroResidencia.html'">Cadastrar Residências</a>
+                <a class="dropdown-item" onclick="window.location.href='cadastroAparatoDomestico.html'">Cadastrar Aparato</a>
+                <a class="dropdown-item" onclick="window.location.href='informarGastos.html'">Informar gastos Eletricos</a>
+                <a class="dropdown-item" onclick="window.location.href='informarGastosAgua.html'">Informar gastos de Água</a>
+                <a class="dropdown-item" onclick="window.location.href='informarGastosCombustivel.html'">Informar gastos de Combustivel</a>
+                <a class="dropdown-item" onclick="window.location.href='informarProducaoLixo.html'">Informar Produção de lixo</a>
+            </div>
+        </div>
+
+
+        <!-- <button type="button" class="btn btn-primary" onclick="window.location.href='cadastroPessoa.html'">Cadastrar Habitantes</button>
+>>>>>>> 39aa567df55b799366c849f92f342320a25b41f8
         <button type="button" class="btn btn-primary" onclick="window.location.href='cadastroResidencia.html'">Cadastrar Residências</button>
         <button type="button" class="btn btn-primary" onclick="window.location.href='cadastroAparatoDomestico.html'">Cadastrar Aparato</button>
-        <button type="button" class="btn btn-primary" onclick="window.location.href='listarResidencia.html'">Listar Residências</button>
-        <button type="button" class="btn btn-primary" onclick="window.location.href='listarHabitante.html'">Listar Habitantes</button>
-        <button type="button" class="btn btn-primary" onclick="window.location.href='listarAparatos.html'">Listar Aparatos Dom.</button>
-        <button type="button" class="btn btn-primary" onclick="window.location.href='gastosResidencia.html'">Gastos da Residencia</button>
         <button type="button" class="btn btn-primary" onclick="window.location.href='informacaoGastos.html'">Informar gastos Eletricos</button>
         <button type="button" class="btn btn-primary" onclick="window.location.href='informarGastosAgua.html'">Informar gastos de Água</button>
         <button type="button" class="btn btn-primary" onclick="window.location.href='informarGastosCombustivel.html'">Informar gastos de Combustivel</button>
         <button type="button" class="btn btn-primary" onclick="window.location.href='informarProducaoLixo.html'">Informar Produção de lixo</button>
+<<<<<<< HEAD
         <button type="button" class="btn btn-primary" onclick="window.location.href='graficos.html'">Grafico</button>
+=======
+        <button type="button" class="btn btn-primary" onclick="window.location.href='gastosResidencia.html'">Listar Gastos da Residencia</button>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='listarResidencia.html'">Listar Residências</button>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='listarHabitante.html'">Listar Habitantes</button>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='listarAparatos.html'">Listar Aparatos Dom.</button> -->
+>>>>>>> 39aa567df55b799366c849f92f342320a25b41f8
     </div>
 
     <div class="container">
@@ -31,6 +70,6 @@
         <hr>
         <h3>Selecione uma opção acima</h3>
     </div>
-    
+
 </body>
 </html>
