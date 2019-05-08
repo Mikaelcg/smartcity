@@ -1,5 +1,7 @@
 $(document).ready(function() {
 	
+	listaIdResidencia(); 
+	
 	$(".mc_embed_signup > form").submit(function(e) {
 		e.preventDefault(); // Prevent a new window from opening upon clicking 'Subscribe now' button
 
@@ -52,4 +54,24 @@ $(document).ready(function() {
 	}); // end of submit function
 });
 
+function listaIdResidencia(){
+	$.ajax({
+		type:"POST",
+		dataType: "json",
+		url: "../php/listar-residencia.php",
+
+		success: function(array){
+			var conteudo_residencias = '';
+
+			for(var i = 0; i < array["residencia"].length; i++){
+				conteudo_residencias += '<option value=' + '"' + array["residencia"][i]["id"] + '">' + array["residencia"][i]["id"] + ' - ' + array["residencia"][i]["endereco"] +', ' + array["residencia"][i]["numero"]  +', ' + array["residencia"][i]["cidade"] + "</option>";
+		
+
+			}
+
+
+			$("#residencias").append(conteudo_residencias);
+		}
+	})
+}
 
