@@ -47,10 +47,9 @@ function fLocalComunicaServidorGrafico(myChart){
 		dataType: "json",
 		url: "../php/dadosGrafico.php",
 		success:function(array){
-            console.log(array[2]);
+            console.log(array);
             for(x in array){
                 myChart.data.datasets[0].data.push(array[x].consumo_eletrico);
-                myChart.data.datasets[0].data.push(array[x].id_residencia);
                 myChart.data.labels.push(array[x].residencia);
                 
                 

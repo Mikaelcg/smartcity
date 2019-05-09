@@ -4,10 +4,7 @@
     $email =       $_POST["email"]; 
     $password =       $_POST["password"]; 
 
-    $endereco = "localhost";
-	$usuario_banco = "root";
-	 $senha_banco = "";
-    $nome_banco = "banco_bsi";
+    include "conexao.php";
     
     $conexao = mysqli_connect($endereco, $usuario_banco, $senha_banco, $nome_banco);
     

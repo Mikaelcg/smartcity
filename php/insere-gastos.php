@@ -1,9 +1,6 @@
 <?php
 
-$endereco = "localhost";
-$usuario_banco = "root";
- $senha_banco = "";
-$nome_banco = "banco_bsi";
+include "conexao.php";
 
 $residencia = $_POST["residencia"];
 $aparato = $_POST["aparato"];

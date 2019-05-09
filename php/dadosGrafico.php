@@ -2,13 +2,10 @@
     
     $id_residencia = $_POST["id_residencia"];
     
-    $endereco = "localhost";
-	$usuario_banco = "root";
-	 $senha_banco = "";
-	$nome_banco = "banco_bsi";
-
+    include "conexao.php";
     $conexao = mysqli_connect($endereco, $usuario_banco, $senha_banco, $nome_banco);
     $dados = mysqli_query($conexao, "SELECT id_residencia, tempo_consumo FROM consumo_eletrico" );
+    // $dados = mysqli_query($conexao, "SELECT sum(tempo_consumo) 'tempo_consumo', id_residencia from consumo_eletrico GROUP BY id_residencia);
 
     $cont = 0;
 
