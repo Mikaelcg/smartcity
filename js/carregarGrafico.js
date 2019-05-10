@@ -15,15 +15,28 @@ function carregarGrafico(){
         data: {
             
             datasets: [{
-                label: 'Consumo (dado/mês)',
+                label: 'Consumo Elétrico (dado/mês)',
 				data: [],
           		
                 borderColor: [
                     'rgba(0, 255, 299, 1)',
                 ],
                 borderWidth: 1
-            }]
+            },
+        
+            {
+                label: 'Consumo de Água (dado/mês)',
+				data: [],
+          		
+                borderColor: [
+                    'rgba(0, 255, 299, 1)',
+                ],
+                borderWidth: 1
+            }
+
+        ]
         },
+        
         options: {
             scales: {
                 yAxes: [{
@@ -35,17 +48,23 @@ function carregarGrafico(){
         }
     });
 
-    fLocalComunicaServidorGrafico(myChart);
+    gerarGraficoConsumoEletrico(myChart);
+    gerarGraficoConsumoAgua(myChart);
+
+
+
+
+
 }
 
 
-function fLocalComunicaServidorGrafico(myChart){
+function gerarGraficoConsumoEletrico(myChart){
 
 
 	$.ajax({
 		type: "POST",
 		dataType: "json",
-		url: "../php/dadosGrafico.php",
+		url: "../php/dadosGraficoConsumoEletrico.php",
 		success:function(array){
             console.log(array);
             for(x in array){
@@ -58,3 +77,24 @@ function fLocalComunicaServidorGrafico(myChart){
 	});
 	
 }
+
+function gerarGraficoConsumoAgua(myChart){
+
+
+	$.ajax({
+		type: "POST",
+		dataType: "json",
+		url: "../php/dadosGraficoConsumoAgua.php",
+		success:function(array){
+            console.log(array);
+            for(x in array){
+                myChart.data.datasets[1].data.push(array[x].consumo);
+                myChart.data.labels.push(array[x].residencia);
+                
+                
+            }
+		}
+	});
+	
+}
+
