@@ -1,5 +1,39 @@
 
 $(document).ready(function(){
+
+	var today = new Date();
+	var dd = String(today.getDate()).padStart(2, '0');
+	var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+	var yyyy = today.getFullYear();
+	var data =String(yyyy + '/' + mm + '/' + dd);
+	var hojeformat =String(dd + '-' + mm + '-' + yyyy);
+
+	$('#datepicker').datepicker();
+	$( "#datepicker" ).datepicker( "option", "dateFormat","dd/mm/yy");
+
+	$("#datepicker").val(hojeformat);
+	$("#datepicker").prop('disabled', true);
+	
+	$("#data").on('change', "input[name=data]", function() {                
+		if($('#dataatual').is(':checked')) { 
+			$("#datepicker").prop('disabled', true);
+			$("#datepicker").val(hojeformat);
+			data = $("#datepicker").val(hojeformat);
+		}else{
+			$("#datepicker").prop('disabled', false);
+			$("#datepicker").val("");
+
+			$('#datepicker').change(function(){
+				var ano = $("#datepicker").val().substr(-4);
+				var mes = $("#datepicker").val().substring(3,5);
+				var dia = $("#datepicker").val().substring(0,2);
+		
+				data = ano+"-"+mes+"-"+dia;
+				console.log(data);
+			});
+		}
+	});
+
     $("#residencias").change(function(){
         var id = $("#residencias").val();
         listaGastos(id);
@@ -23,8 +57,10 @@ $(document).ready(function(){
 		// Everything checks out! Continue...
 		if (validForm == true) {
 			var formContainer = $(".mc_embed_signup");
-			var formData = $(this).serialize(); // Format all info and get it ready for sendoff
-
+			var formData = $(this).serializeArray(); // Format all info and get it ready for sendoff
+			formData.push({name:'data', value: data});
+			console.log(formData);
+			
 			// AJAX magic coming up...
 			$.ajax({
 				type:"POST",
