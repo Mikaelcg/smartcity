@@ -2,47 +2,103 @@
 <html>
 
 <head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Login</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="css/login.css" />
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src='js/jquery.md5.js'></script>
-	<script src="js/login.js"></script>
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 2 | Log in</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="/smartcity/bower_components/bootstrap/dist/css/bootstrap2.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap2.min.css"> -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="plugins/iCheck/square/blue.css">
+
+    <!-- jQuery 3 -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src='bower_components/jquery/dist/jquery.md5.js'></script>
+    <script src="dist/js/index.js"></script>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body>
-	<div class="wrapper">
-		<form class="login" method="post">
-			<p class="title">Log in</p>
-			<input type="text" placeholder="Usuário" id="username" name="username" autofocus />
-			<i class="fa fa-user"></i>
-			<input type="password" placeholder="Senha" id="password" name="password" />
-			<i class="fa fa-key"></i>
-			<a href="#">Esqueceu sua senha?</a>
-			
-			<button type="submit">
-				<i class="spinner"></i>
-				<span class="state">Entrar</span>
-			</button>
-		</form>
+<body class="hold-transition login-page" style="background-image: url()">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="index.html"><b>Smart</b>City</a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+            <p class="login-box-msg">Entre para iniciar sua sessão</p>
+            
+            <form action="" method="post" id="form">
+                <div class="form-group has-feedback">
+                    <input type="email" class="form-control" placeholder="Email" name="email" id="email">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" placeholder="Senha" name="senha" id="senha">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
+                    </div>
+                </div>
+            </form>
 
-		<button onclick="window.location.href='paginas/paginaInicial.html'">
-			<i class="spinner"></i>
-			<span class="state">Entrar</span>
-		</button>
-		<button onclick="window.location.href='paginas/registrar.html'">
-			<i class="spinner"></i>
-			<span class="state">Registrar</span>
-		</button>
-		</p>
-	</div>
+            <a href="#">Esqueci minha senha</a><br>
+            <a href="/smartcity/pages/registro/registro.html" class="text-center">Não possui uma conta? Registre-se</a>
+            
+            <div class="d-flex w-100 justify-content-center mt-3" style="opacity: 0" id="loading">
+                <div class="spinner-border text-success" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+        <!-- /.login-box-body -->
+        <div class="alert alert-success alert-dismissible" id="alert-success" style="display: none;">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4><i class="icon fa fa-check"></i> Sucesso!</h4>
+                Logado com sucesso.
+        </div>
+
+        <div class="alert alert-danger alert-dismissible" id="alert" style="display: none;">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
+                Preencha todos os campos.
+        </div>
+
+        <div class="alert alert-danger alert-dismissible" id="alert2" style="display: none;">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
+                Usuario ou senha incorretos.
+        </div>
+    </div>
+    <!-- /.login-box -->
+    <!-- iCheck -->
+
+    <script src="plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' /* optional */
+            });
+        });
+    </script>
 </body>
 
 </html>

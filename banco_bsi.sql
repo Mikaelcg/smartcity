@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8888
--- Generation Time: May 17, 2019 at 01:10 AM
--- Server version: 5.7.24-log
--- PHP Version: 7.2.10
+-- Host: 127.0.0.1
+-- Generation Time: 19-Maio-2019 às 10:35
+-- Versão do servidor: 10.1.37-MariaDB
+-- versão do PHP: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,56 +25,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `aparatodomestico`
+-- Estrutura da tabela `aparatodomestico`
 --
 
 CREATE TABLE `aparatodomestico` (
   `id` int(11) NOT NULL,
   `aparato` varchar(45) NOT NULL,
   `id_residencia` int(11) NOT NULL,
-  `consumo` int(11) NOT NULL
+  `potencia` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `aparatodomestico`
+-- Extraindo dados da tabela `aparatodomestico`
 --
 
-INSERT INTO `aparatodomestico` (`id`, `aparato`, `id_residencia`, `consumo`) VALUES
-(7, 'TV', 4, 700),
-(8, 'Geladeira', 4, 800),
-(9, 'Ar-condicionado', 4, 200),
-(10, 'Geladeira', 5, 100),
-(11, 'Microondas', 5, 400),
-(12, '10', 5, 2),
-(13, '7', 4, 1),
-(14, '7', 4, 213),
-(15, '10', 5, 12313),
-(16, '7', 4, 123),
-(17, '7', 4, 123),
-(18, '7', 4, 123),
-(19, '9', 4, 123),
-(20, '7', 4, 12344455),
-(21, '8', 4, 12313),
-(22, '7', 4, 123),
-(23, 'Computador', 6, 10),
-(24, 'TV', 6, 8);
+INSERT INTO `aparatodomestico` (`id`, `aparato`, `id_residencia`, `potencia`) VALUES
+(28, '1', 5, 13);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cidade`
---
-
-CREATE TABLE `cidade` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
-  `id_federacao` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `consumo_agua`
+-- Estrutura da tabela `consumo_agua`
 --
 
 CREATE TABLE `consumo_agua` (
@@ -83,7 +54,7 @@ CREATE TABLE `consumo_agua` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `consumo_agua`
+-- Extraindo dados da tabela `consumo_agua`
 --
 
 INSERT INTO `consumo_agua` (`id_residencia`, `consumo`) VALUES
@@ -95,7 +66,7 @@ INSERT INTO `consumo_agua` (`id_residencia`, `consumo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `consumo_eletrico`
+-- Estrutura da tabela `consumo_eletrico`
 --
 
 CREATE TABLE `consumo_eletrico` (
@@ -103,26 +74,21 @@ CREATE TABLE `consumo_eletrico` (
   `id_residencia` int(11) NOT NULL,
   `id_aparato` int(11) NOT NULL,
   `tempo_consumo` int(11) NOT NULL,
-  `data_consumo` date NOT NULL
+  `data_consumo` varchar(15) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `consumo_eletrico`
+-- Extraindo dados da tabela `consumo_eletrico`
 --
 
 INSERT INTO `consumo_eletrico` (`id`, `id_residencia`, `id_aparato`, `tempo_consumo`, `data_consumo`) VALUES
-(11, 4, 7, 123123, '2222-10-02'),
-(12, 4, 9, 123, '2222-10-02'),
-(13, 4, 8, 123, '2222-10-02'),
-(14, 4, 8, 123, '2222-10-02'),
-(15, 4, 7, 22, '2019-05-16'),
-(16, 4, 7, 123, '2019-05-27'),
-(17, 4, 7, 123, '2019-05-16');
+(19, 28, 5, 123, '19/05/2019'),
+(20, 28, 5, 123, '19/05/2019');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `habitante`
+-- Estrutura da tabela `habitante`
 --
 
 CREATE TABLE `habitante` (
@@ -130,112 +96,77 @@ CREATE TABLE `habitante` (
   `nome` varchar(45) NOT NULL,
   `sobrenome` varchar(45) NOT NULL,
   `nascimento` varchar(45) NOT NULL,
-  `sexo` varchar(45) NOT NULL
+  `sexo` varchar(45) NOT NULL,
+  `id_residencia` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `habitante`
+-- Extraindo dados da tabela `habitante`
 --
 
-INSERT INTO `habitante` (`id`, `nome`, `sobrenome`, `nascimento`, `sexo`) VALUES
-(23, '222', '222', '2222-02-22', 'Masculino'),
-(24, 'TEAST1', '12', '2222-02-22', 'Masculino');
+INSERT INTO `habitante` (`id`, `nome`, `sobrenome`, `nascimento`, `sexo`, `id_residencia`) VALUES
+(52, 'Mikael', 'Gallucci', '03/06/1998', 'masculino', 4),
+(53, 'fsdf', 'sdfdsf', '05/28/2019', 'masculino', 9);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `morador`
---
-
-CREATE TABLE `morador` (
-  `id_habitante` int(11) NOT NULL,
-  `id_residencia` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `morador`
---
-
-INSERT INTO `morador` (`id_habitante`, `id_residencia`) VALUES
-(12, 1),
-(17, 1),
-(21, 1),
-(23, 4),
-(24, 4);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pais`
---
-
-CREATE TABLE `pais` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(45) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `residencia`
+-- Estrutura da tabela `residencia`
 --
 
 CREATE TABLE `residencia` (
   `id` int(11) NOT NULL,
   `endereco` varchar(45) NOT NULL,
-  `numero` varchar(45) NOT NULL,
+  `numero` int(11) NOT NULL,
   `complemento` varchar(45) NOT NULL,
-  `metragem` varchar(45) NOT NULL,
-  `cidade` varchar(45) NOT NULL,
-  `id_cidade` int(11) DEFAULT NULL
+  `area` int(11) NOT NULL,
+  `cidade` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='	';
 
 --
--- Dumping data for table `residencia`
+-- Extraindo dados da tabela `residencia`
 --
 
-INSERT INTO `residencia` (`id`, `endereco`, `numero`, `complemento`, `metragem`, `cidade`, `id_cidade`) VALUES
-(4, 'Sete', '7', 'sete7', '700', 'Curitiba', NULL),
-(5, 'Oito', '8', 'oito8', '800', 'Curitiba', NULL),
-(6, 'RESIDENCIA DA ZUERA', '123456', 'APARTAMENTO 92', '120000', 'Curitiba', NULL),
-(7, 'Avenida da zoa', '123', 'Zoa pakas', '123455', 'Curitiba', NULL),
-(8, '123', '1123', '123', '12333333333333', 'Curitiba', NULL);
+INSERT INTO `residencia` (`id`, `endereco`, `numero`, `complemento`, `area`, `cidade`) VALUES
+(4, 'Sete', 7, 'sete7', 700, 'Curitiba'),
+(5, 'Oito', 8, 'oito8', 800, 'Curitiba'),
+(6, 'RESIDENCIA DA ZUERA', 123456, 'APARTAMENTO 92', 120000, 'Curitiba'),
+(7, 'Avenida da zoa', 123, 'Zoa pakas', 123455, 'Curitiba'),
+(9, 'localhost', 123, 'Zoa pakas', 123, 'curitiba'),
+(10, 'localhost', 123, 'Zoa pakas', 123, 'curitiba'),
+(11, 'Avenida da zoa', 123, 'Zoa pakas', 123, 'curitiba'),
+(12, '123', 213, '213', 213, 'curitiba'),
+(13, '123', 213, '213', 213, 'curitiba'),
+(14, '123', 213, '213', 213, 'curitiba'),
+(15, '123', 213, '213', 213, 'curitiba'),
+(16, '123', 213, '213', 213, 'curitiba'),
+(17, '123', 213, '213', 213, 'curitiba'),
+(18, '123', 213, '213', 213, 'curitiba'),
+(19, '123', 213, '213', 213, 'curitiba'),
+(20, '123', 213, '213', 213, 'curitiba');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `unidade_federacao`
---
-
-CREATE TABLE `unidade_federacao` (
-  `id` int(11) NOT NULL,
-  `siga` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
-  `nome` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
-  `id_pais` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
-  `username` varchar(100) NOT NULL,
+  `nome` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `senha` varchar(100) NOT NULL,
   `confirmado` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `username`, `email`, `senha`, `confirmado`) VALUES
-(1, '123', '123', 'd9b1d7db4cd6e70935368a1efb10e377', 0),
-(2, 'dd', 'ddd', '11ddbaf3386aea1f2974eee984542152', 0),
-(3, 'aaa', 'aaa', '47bce5c74f589f4867dbd57e9ca9f808', 0);
+INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `confirmado`) VALUES
+(10, '123', 'mikagallucci@hotmail.com', '202cb962ac59075b964b07152d234b70', 0),
+(11, '123', 'mikagallucci@hotmail.com', '202cb962ac59075b964b07152d234b70', 0),
+(12, 'lol', '123@aaa.com', '9cdfb439c7876e703e307864c9167a15', 0);
 
 --
 -- Indexes for dumped tables
@@ -247,12 +178,6 @@ INSERT INTO `usuario` (`id`, `username`, `email`, `senha`, `confirmado`) VALUES
 ALTER TABLE `aparatodomestico`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_residencia_idx` (`id_residencia`);
-
---
--- Indexes for table `cidade`
---
-ALTER TABLE `cidade`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `consumo_eletrico`
@@ -267,35 +192,16 @@ ALTER TABLE `habitante`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `morador`
---
-ALTER TABLE `morador`
-  ADD KEY `id_residencia_idx` (`id_residencia`);
-
---
--- Indexes for table `pais`
---
-ALTER TABLE `pais`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `residencia`
 --
 ALTER TABLE `residencia`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_cidade_idx` (`id_cidade`);
-
---
--- Indexes for table `unidade_federacao`
---
-ALTER TABLE `unidade_federacao`
   ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`,`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -305,49 +211,31 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `aparatodomestico`
 --
 ALTER TABLE `aparatodomestico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
-
---
--- AUTO_INCREMENT for table `cidade`
---
-ALTER TABLE `cidade`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `consumo_eletrico`
 --
 ALTER TABLE `consumo_eletrico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `habitante`
 --
 ALTER TABLE `habitante`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
-
---
--- AUTO_INCREMENT for table `pais`
---
-ALTER TABLE `pais`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `residencia`
 --
 ALTER TABLE `residencia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `unidade_federacao`
---
-ALTER TABLE `unidade_federacao`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

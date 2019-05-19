@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cadastrar</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="/smartcity/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/smartcity/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/smartcity/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="/smartcity/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="/smartcity/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="/smartcity/plugins/iCheck/all.css">
+    <link rel="stylesheet" href="/smartcity/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+    <link rel="stylesheet" href="/smartcity/plugins/timepicker/bootstrap-timepicker.min.css">
+    <link rel="stylesheet" href="/smartcity/bower_components/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="/smartcity/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/smartcity/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+        <script src="/smartcity/bower_components/jquery/dist/jquery.min.js"></script>    
+    <script src="/smartcity/dist/js/pages/inserir/inserir-habitante.js"></script>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="/smartcity/pages/dashboard.html" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>S</b>C</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>Smart</b>City</span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="/smartcity/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <span class="hidden-xs">Alexander Pierce</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="/smartcity/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <p>
+                                        Usuário
+                                        <small>Logado</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="/smartcity/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p>Usuário</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    </div>
+                </div>
+                <!-- search form -->
+                <form action="#" method="get" class="sidebar-form">
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i
+                                    class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header">MENU</li>
+                    <li><a href="/smartcity/pages/dashboard.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-edit"></i> <span>Inserir informações</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="inserir-habitante.html">
+                                    <i class="fa fa-circle-o"></i>
+                                    Cadastrar habitante</a>
+                            </li>
+                            <li>
+                                <a href="inserir-residencia.html">
+                                    <i class="fa fa-circle-o"></i>
+                                    Cadastrar residência
+                                </a>
+                            </li>
+                            <li>
+                                <a href="inserir-aparato.html">
+                                    <i class="fa fa-circle-o"></i>
+                                    Cadastrar aparato doméstico
+                                </a>
+                            </li>
+                            <li>
+                                <a href="inserir-gasto-eletrico.html">
+                                    <i class="fa fa-circle-o"></i>
+                                    Informar gastos elétricos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="inserir-gasto-agua.html">
+                                    <i class="fa fa-circle-o"></i>
+                                    Informar gastos de água
+                                </a>
+                            </li>
+                            <li>
+                                <a href="inserir-gasto-combustivel.html">
+                                    <i class="fa fa-circle-o"></i>
+                                    Informar gastos de combustível
+                                </a>
+                            </li>
+                            <li>
+                                <a href="inserir-producao-lixo.html">
+                                    <i class="fa fa-circle-o"></i>
+                                    Informar produção de lixo
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-pie-chart"></i>
+                            <span>Gráficos</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="/smartcity/pages/graficos/grafico-habitantes.html">
+                                    <i class="fa fa-circle-o"></i>
+                                    Listar habitantes
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/smartcity/pages/graficos/grafico-residencias.html">
+                                    <i class="fa fa-circle-o"></i>
+                                    Listar residências
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/smartcity/pages/graficos/grafico-aparatos.html">
+                                    <i class="fa fa-circle-o"></i>
+                                    Listar aparatos domésticos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/smartcity/pages/graficos/grafico-gastos.html">
+                                    <i class="fa fa-circle-o"></i>
+                                    Listar gastos das residências
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-table"></i> <span>Relatórios</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="/smartcity/pages/relatorios/relatorios-habitantes.html">
+                                    <i class="fa fa-circle-o"></i>
+                                    Listar habitantes
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/smartcity/pages/relatorios/relatorios-residencias.html">
+                                    <i class="fa fa-circle-o"></i>
+                                    Listar residências
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/smartcity/pages/relatorios/relatorios-aparatos.html">
+                                    <i class="fa fa-circle-o"></i>
+                                    Listar aparatos domésticos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/smartcity/pages/relatorios/relatorios-gastos.html">
+                                    <i class="fa fa-circle-o"></i>
+                                    Listar gastos das residências
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Cadastro
+                    <small>Habitantes</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i>Inserir informações</a></li>
+                    <li class="active">Cadastrar habitante</li>
+                </ol>
+            </section>
+
+            <section class="content">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Cadastrar habitante</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                        <div class="box-body">
+                            <form id="form" action="" name="form" method="post">
+                                <!-- Nome -->
+                                <div class="form-group">
+                                    <label for="nome">Nome</label>
+                                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+                                </div>
+                                <!-- Sobrenome -->
+                                <div class="form-group">
+                                    <label for="sobrenome">Sobrenome</label>
+                                    <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Sobrenome">
+                                </div>
+                                <!-- Data de nascimento -->
+                                <div class="form-group">
+                                    <label>Data de nascimento</label>
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input type="text" class="form-control pull-right" name="datanasc" id="datepicker">
+                                    </div>
+                                </div>
+                                <!-- Sexo -->
+                                <div class="form-group">
+                                    <label>
+                                        Masculino
+                                        <input type="radio" name="sexo" class="minimal" value="masculino" checked>
+                                    </label>
+                                    <label>
+                                        Feminino
+                                        <input type="radio" name="sexo" value="feminino" class="minimal">
+                                    </label>
+                                </div>
+    
+                                <!-- Residencia -->
+                                <div class="form-group">
+                                    <label>Residência</label>
+                                    <select name="residencia" id="residencias" class="form-control select2" style="width: 100%;">
+                                            <option disabled selected value=""> Selecione uma residencia </option>
+                                    </select>
+                                </div>
+                                <!-- /.box-body -->
+                                <div class="overlay" >
+                                    <i class="fa fa-refresh fa-spin" style="z-index: 3; display: none;" id="loading"></i>
+                                </div>
+                                <div class="box-footer">
+                                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                </div>
+                            </form>
+                        </div>
+                </div>
+                <div class="alert alert-success alert-dismissible" id="alert-success" style="display: none;">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4><i class="icon fa fa-check"></i> Sucesso!</h4>
+                        Habitante cadastrado com sucesso.
+                </div>
+
+                <div class="alert alert-danger alert-dismissible" id="alert" style="display: none;">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
+                        Preencha todos os campos.
+                </div>
+                <!-- /.box -->
+            </section>
+        </div>
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.4.0
+            </div>
+            <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+            reserved.
+        </footer>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery 3 -->
+    <script src="/smartcity/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="/smartcity/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Select2 -->
+    <script src="/smartcity/bower_components/select2/dist/js/select2.full.min.js"></script>
+    <!-- InputMask -->
+    <script src="/smartcity/plugins/input-mask/jquery.inputmask.js"></script>
+    <script src="/smartcity/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script src="/smartcity/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+    <!-- date-range-picker -->
+    <script src="/smartcity/bower_components/moment/min/moment.min.js"></script>
+    <script src="/smartcity/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap datepicker -->
+    <script src="/smartcity/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <!-- bootstrap color picker -->
+    <script src="/smartcity/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+    <!-- bootstrap time picker -->
+    <script src="/smartcity/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="/smartcity/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- iCheck 1.0.1 -->
+    <script src="/smartcity/plugins/iCheck/icheck.min.js"></script>
+    <!-- FastClick -->
+    <script src="/smartcity/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/smartcity/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="/smartcity/dist/js/demo.js"></script>
+    <!-- Page script -->
+    <script>
+        $(function () {
+            //Initialize Select2 Elements
+            $('.select2').select2()
+
+            //Datemask dd/mm/yyyy
+            $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+            //Datemask2 mm/dd/yyyy
+            $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+            //Money Euro
+            $('[data-mask]').inputmask()
+
+            //Date range picker
+            $('#reservation').daterangepicker()
+            //Date range picker with time picker
+            $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' })
+            //Date range as a button
+            $('#daterange-btn').daterangepicker(
+                {
+                    ranges: {
+                        'Today': [moment(), moment()],
+                        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                        'This Month': [moment().startOf('month'), moment().endOf('month')],
+                        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                    },
+                    startDate: moment().subtract(29, 'days'),
+                    endDate: moment()
+                },
+                function (start, end) {
+                    $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+                }
+            )
+
+            //Date picker
+            $('#datepicker').datepicker({
+                autoclose: true,
+                format: 'dd/mm/yyyy',
+                endDate: "today"
+            })
+
+            //iCheck for checkbox and radio inputs
+            $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+                checkboxClass: 'icheckbox_minimal-blue',
+                radioClass: 'iradio_minimal-blue'
+            })
+            //Red color scheme for iCheck
+            $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+                checkboxClass: 'icheckbox_minimal-red',
+                radioClass: 'iradio_minimal-red'
+            })
+            //Flat red color scheme for iCheck
+            $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+                checkboxClass: 'icheckbox_flat-green',
+                radioClass: 'iradio_flat-green'
+            })
+
+            //Colorpicker
+            $('.my-colorpicker1').colorpicker()
+            //color picker with addon
+            $('.my-colorpicker2').colorpicker()
+
+            //Timepicker
+            $('.timepicker').timepicker({
+                showInputs: false
+            })
+        })
+    </script>
+</body>
+
+</html>
