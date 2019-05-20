@@ -55,7 +55,7 @@ folder instead of downloading all of them to reduce the load. -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="/smartcity/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                                <span class="hidden-xs">Alexander Pierce</span>
+                                <span class="hidden-xs">Usuário</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
@@ -259,7 +259,7 @@ folder instead of downloading all of them to reduce the load. -->
                         <!-- AREA CHART -->
                         <div class="box box-primary">
                             <div class="box-header with-border">
-                                <h3 class="box-title">Gastos elétricos - Residência <strong>5</strong></h3>
+                                <h3 class="box-title">Gasto elétrico mensal - Residência <strong id="idresidencia"></strong></h3>
 
                                 <div class="box-tools pull-right">
                                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
@@ -277,6 +277,14 @@ folder instead of downloading all of them to reduce the load. -->
                             <!-- /.box-body -->
                         </div>
                         <!-- /.box -->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Residência</label>
+                            <select name="residencia" class="form-control select2" style="width: 100%;" id="residencias">
+                                <option disabled selected value=""> Selecione uma residencia </option>
+                            </select>
+                        </div>
                     </div>
                     <!-- /.col (RIGHT) -->
                 </div>
