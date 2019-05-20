@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 19-Maio-2019 às 10:35
+-- Generation Time: 20-Maio-2019 às 02:30
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.3.0
 
@@ -40,7 +40,9 @@ CREATE TABLE `aparatodomestico` (
 --
 
 INSERT INTO `aparatodomestico` (`id`, `aparato`, `id_residencia`, `potencia`) VALUES
-(28, '1', 5, 13);
+(28, '1', 5, 13),
+(29, '1', 5, 100),
+(31, '1', 4, 123);
 
 -- --------------------------------------------------------
 
@@ -49,19 +51,11 @@ INSERT INTO `aparatodomestico` (`id`, `aparato`, `id_residencia`, `potencia`) VA
 --
 
 CREATE TABLE `consumo_agua` (
+  `id` int(11) NOT NULL,
   `id_residencia` int(11) NOT NULL,
-  `consumo` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Extraindo dados da tabela `consumo_agua`
---
-
-INSERT INTO `consumo_agua` (`id_residencia`, `consumo`) VALUES
-(4, 123),
-(4, 123),
-(4, 123),
-(4, 546654);
+  `consumo` float NOT NULL,
+  `data_consumo` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -82,8 +76,13 @@ CREATE TABLE `consumo_eletrico` (
 --
 
 INSERT INTO `consumo_eletrico` (`id`, `id_residencia`, `id_aparato`, `tempo_consumo`, `data_consumo`) VALUES
-(19, 28, 5, 123, '19/05/2019'),
-(20, 28, 5, 123, '19/05/2019');
+(26, 5, 29, 2, '19/05/2019'),
+(27, 5, 28, 1, '01/03/2019'),
+(28, 5, 28, 3, '11/04/2019'),
+(29, 5, 28, 3, '14/05/2019'),
+(30, 5, 29, 3, '09/04/2019'),
+(31, 5, 28, 5, '08/02/2019'),
+(32, 4, 31, 1, '01/01/2019');
 
 -- --------------------------------------------------------
 
@@ -180,6 +179,12 @@ ALTER TABLE `aparatodomestico`
   ADD KEY `id_residencia_idx` (`id_residencia`);
 
 --
+-- Indexes for table `consumo_agua`
+--
+ALTER TABLE `consumo_agua`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `consumo_eletrico`
 --
 ALTER TABLE `consumo_eletrico`
@@ -211,13 +216,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `aparatodomestico`
 --
 ALTER TABLE `aparatodomestico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- AUTO_INCREMENT for table `consumo_agua`
+--
+ALTER TABLE `consumo_agua`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `consumo_eletrico`
 --
 ALTER TABLE `consumo_eletrico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `habitante`
