@@ -3,6 +3,8 @@
 
 	date_default_timezone_set('Etc/UTC');
 	require 'PHPMailer/PHPMailerAutoload.php';
+
+	$email =  $_POST["email"];
     
 	$mail= new PHPMailer;
 	$mail->IsSMTP(); 
@@ -15,7 +17,7 @@
 	$mail->Username = 'webgrupo01'; 
 	$mail->Password = 'melhorgrupo123';
 	$mail->SetFrom('webgrupo01@gmail.com', 'SmartCity');
-	$mail->addAddress('webgrupo01@gmail.com','');
+	$mail->addAddress($email,'');
 	$mail->Subject = 'Titulo';
 	$mail->msgHTML('Conteúdo do E-mail');
        

@@ -75,7 +75,9 @@ $(document).ready(function() {
 
 function sendEmail(){
 	$.ajax({
-		url: "../../dist/php/enviar-email.php",
+        type:"POST",
+        url: "../../dist/php/enviar-email.php",
+        data: formData,
 
 		success: function(){
 			console.log("Email enviado");
