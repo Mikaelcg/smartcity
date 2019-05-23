@@ -1,5 +1,7 @@
 <?php
 	
+	session_start();
+
 	$nome =       $_POST["nome"];
 	$email =  $_POST["email"];
     $senha=      $_POST["password"];
@@ -12,6 +14,8 @@
 	mysqli_query($conexao, " INSERT INTO usuario(nome, email, senha, confirmado) VALUES('$nome','$email','$senha', $confirmado) ");
 
 	$id = SELECT MAX(id) FROM usuario;
+
+	$_SESSION["id"] = $id;
 
 	date_default_timezone_set('Etc/UTC');
 	require 'PHPMailer/PHPMailerAutoload.php';

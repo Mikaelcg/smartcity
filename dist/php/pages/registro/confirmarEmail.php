@@ -2,9 +2,11 @@
 
     include "../../conexao.php";
 
-    $id =  $_POST["id"];
+    session_start();
 
-    UPDATE usuario SET confirmado = "1" WHERE id = $id;
+    $_SESSION["id"];
+
+    UPDATE usuario SET confirmado = "1" WHERE id = $_SESSION["id"];
 
 
  ?>
