@@ -34,7 +34,7 @@ $(document).ready(function() {
             if(validForm == true){
                 var formData = $(this).serializeArray(); // Format all info and get it ready for sendoff
                 console.log(formData);
-                // sendEmail(formData);
+                sendEmail(formData);
 
                 $("#nome").val("");
                 $("#email").val("");
@@ -73,15 +73,15 @@ $(document).ready(function() {
     }); 
 });
 
-// function sendEmail(formData){
-// 	$.ajax({
-//         type:"POST",
-//         url: "../../dist/php/enviar-email.php",
-//         data: formData,
+function sendEmail(formData){
+	$.ajax({
+        type:"POST",
+        url: "../../dist/php/enviar-email.php",
+        data: formData,
 
-// 		success: function(){
-// 			console.log("Email enviado");
-// 		}
-// 	})
-// } 
+		success: function(){
+			console.log("Email enviado");
+		}
+	})
+} 
 
