@@ -1,15 +1,8 @@
 
  <?php
 
-	
-
 	date_default_timezone_set('Etc/UTC');
 	require 'PHPMailer/PHPMailerAutoload.php';
-
-	$email =  $_POST["email"];
-	$id =  $_POST["id"];
-
-	echo($id);
     
 	$mail= new PHPMailer;
 	$mail->IsSMTP(); 
@@ -24,7 +17,7 @@
 	$mail->SetFrom('webgrupo01@gmail.com', 'SmartCity');
 	$mail->addAddress($email,'');
 	$mail->Subject = 'Titulo';
-	$mail->msgHTML($id);
+	$mail->msgHTML("Para confimar seu email, clique no link: <a href='localhost/smartcity/dist/php/pages/registro/confirmar-usuario.php?id=".$id."&codigo=".$codigo_confirmacao."'>Clique aqui</a>");
        
 	$mail->send();
 	
