@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     listaIdResidencia();
 
     var today = new Date();
@@ -11,9 +10,6 @@ $(document).ready(function() {
 
     $("#datepicker").val(data);
     
-    $("#residencias").change(function(){
-        listaAparatos($("#residencias").val());
-    })
 
 	$("#form").submit(function(e) {
         $('#loading').css("display", "initial");
@@ -26,16 +22,10 @@ $(document).ready(function() {
 		// Simple check for all inputs to make sure the value is not empty
 		inputArray.each(function(item) {
 			if ($(this).val() == "") {
-				validForm = false;
+                validForm = false;
 			}
         });
         
-        if( $('#residencias').val() == '' || $('#residencias').val() == null ){
-            validForm = false;
-        }
-        if( $('#aparatos').val() == '' || $('#aparatos').val() == null ){
-            validForm = false;
-        }
         
         if(validForm == true){
             var formData = $(this).serializeArray(); // Format all info and get it ready for sendoff
@@ -43,7 +33,7 @@ $(document).ready(function() {
     
             $.ajax({
                 type:"POST",
-                url: "../../dist/php/pages/inserir/inserir-poducao-lixo.php",
+                url: "../../dist/php/pages/inserir/inserir-producao-lixo.php",
                 data: formData,
                 // cache: false,
                 // dataType: "json",
