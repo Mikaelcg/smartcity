@@ -7,6 +7,9 @@
 	require 'PHPMailer/PHPMailerAutoload.php';
 
 	$email =  $_POST["email"];
+	$id =  $_POST["id"];
+
+	echo($id);
     
 	$mail= new PHPMailer;
 	$mail->IsSMTP(); 
@@ -21,7 +24,7 @@
 	$mail->SetFrom('webgrupo01@gmail.com', 'SmartCity');
 	$mail->addAddress($email,'');
 	$mail->Subject = 'Titulo';
-	$mail->msgHTML('Conteúdo do E-mail');
+	$mail->msgHTML($id);
        
 	$mail->send();
 	

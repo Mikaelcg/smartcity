@@ -34,7 +34,7 @@ $(document).ready(function() {
             if(validForm == true){
                 var formData = $(this).serializeArray(); // Format all info and get it ready for sendoff
                 console.log(formData);
-                sendEmail(formData);
+                
 
                 $("#nome").val("");
                 $("#email").val("");
@@ -56,7 +56,9 @@ $(document).ready(function() {
         
                     success: function(data) {
                         console.log("Success! Here is the data:", data); // Yay!
-    
+                        formData.push({name: 'id', value: data});
+                        console.log(formData);
+                        sendEmail(formData);
                         setTimeout(() => {
                             $('#loading').css("display", "none");
                             $('#alert-success').css("display", "block");
