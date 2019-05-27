@@ -12,8 +12,12 @@
     
     while($user = mysqli_fetch_assoc($dados)){
         
-        if( $user['email'] == $email && $user['senha'] == $password){
+        if( $user['email'] == $email && $user['senha'] == $password && $user['confirmado'] == 1){
             $retorno = 1;
+        }
+
+        if( $user['email'] == $email && $user['senha'] == $password && $user['confirmado'] == 0){
+            $retorno = 2;
         }
     }
 

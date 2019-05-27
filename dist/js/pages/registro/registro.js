@@ -7,6 +7,7 @@ $(document).ready(function() {
         $('#alert-success').css("display", "none");
         $('#alert').css("display", "none");
         $('#alert2').css("display", "none");
+        $('#alert3').css("display", "none");
 
         var validForm = true; // Set initial state of valid form to true
         var inputArray = $(this).find("input"); // Find all required inputs and store them in array
@@ -57,12 +58,17 @@ $(document).ready(function() {
                     success: function(data) {
                         console.log("Success! Here is the data:", data); // Yay!
                         formData.push({name: 'id', value: data});
-                        console.log(formData);
-                        sendEmail(formData);
-                        setTimeout(() => {
-                            $('#loading').css("display", "none");
-                            $('#alert-success').css("display", "block");
-                        }, 1000);
+                        
+                        if(data == 'false'){
+                            $('#alert3').css("display", "block");
+                        }else{
+                            sendEmail(formData);
+                            setTimeout(() => {
+                                $('#loading').css("display", "none");
+                                $('#alert-success').css("display", "block");
+                            }, 1000);
+                        }
+
                     }
                 })
             }else{

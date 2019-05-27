@@ -6,6 +6,7 @@ $(document).ready(function() {
         $('#alert-success').css("display", "none");
         $('#alert').css("display", "none");
         $('#alert2').css("display", "none");
+        $('#alert3').css("display", "none");
 
         var validForm = true; // Set initial state of valid form to true
         var inputArray = $(this).find("input"); // Find all required inputs and store them in array
@@ -51,8 +52,13 @@ $(document).ready(function() {
                             }, 1500);
                         }, 1000);
                     }else{
-                        $('#loading').css("opacity", "0");
-                        $('#alert2').css("display", "block");
+                        if(data == 2){
+                            $('#alert3').css("display", "block");
+                            $('#loading').css("opacity", "0");
+                        }else{
+                            $('#loading').css("opacity", "0");
+                            $('#alert2').css("display", "block");
+                        }
                     }
                 }
             })

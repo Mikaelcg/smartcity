@@ -3,6 +3,7 @@
 
 	date_default_timezone_set('Etc/UTC');
 	require 'PHPMailer/PHPMailerAutoload.php';
+	echo('deuboa');
     
 	$mail= new PHPMailer;
 	$mail->IsSMTP(); 
