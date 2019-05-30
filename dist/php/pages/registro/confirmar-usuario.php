@@ -1,4 +1,4 @@
- <?php
+<?php
 
    include "../../conexao.php";
 
@@ -11,5 +11,5 @@
    
    mysqli_query($conexao, "UPDATE usuario SET confirmado = 1 WHERE id = $id AND codigo_confirmacao = '$md5'");
 
-
- ?>
+   echo 'E-mail confirmado, <a href="/smartcity/index.html">clique aqui para logar</a>'
+?>
