@@ -9,7 +9,7 @@ $(document).ready(function() {
     var data =String(dd + '/' + mm + '/' + yyyy);
     
 
-    $("#datepicker").val(data);
+    $("#datepicker-disabled").val(data);
     
     
 

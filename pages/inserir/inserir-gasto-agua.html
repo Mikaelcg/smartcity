@@ -260,20 +260,22 @@
                                         <option disabled selected value=""> Selecione uma residencia </option>
                                     </select>
                                 </div>
-
+                                <!-- DATA (SERÁ SEMPRE A DATA ATUAL) -->
                                 <div class="form-group">
-                                    <label for="tempo">Quantidade de água gasta em litros</label>
-                                    <input type="number" class="form-control" id="tempo" name="quantidade" placeholder="Quantidade em litros">
-                                </div>
-                               
-                                <div class="form-group">
-                                    <label>Data</label>
+                                    <label>Data (hoje)</label>
                                     <div class="input-group date">
                                         <div class="input-group-addon">
                                             <i class="fa fa-calendar"></i>
                                         </div>
-                                        <input type="text" class="form-control pull-right" name="data" id="datepicker">
+                                        <input type="text" class="form-control pull-right" name="data" id="datepicker-disabled" readonly="readonly">
+                                        <!-- <input type="text" class="form-control pull-right" name="data" id="datepicker"> -->
                                     </div>
+                                </div>
+
+                                <!-- QTDE -->
+                                <div class="form-group">
+                                    <label for="tempo">Valor da leitura do hidrometro (em m3) na data - (1 m3 = 1000L)</label>
+                                    <input type="number" class="form-control" id="tempo" name="quantidade" placeholder="Quantidade em metros cubicos">
                                 </div>
                                 <!-- /.box-body -->
                                 <div class="overlay" >
