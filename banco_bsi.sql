@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: May 24, 2019 at 01:39 AM
--- Server version: 5.7.24-log
--- PHP Version: 7.2.10
+-- Host: 127.0.0.1
+-- Generation Time: 01-Jun-2019 às 09:42
+-- Versão do servidor: 10.1.37-MariaDB
+-- versão do PHP: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `aparatodomestico`
+-- Estrutura da tabela `aparatodomestico`
 --
 
 CREATE TABLE `aparatodomestico` (
@@ -36,38 +36,45 @@ CREATE TABLE `aparatodomestico` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `aparatodomestico`
+-- Extraindo dados da tabela `aparatodomestico`
 --
 
 INSERT INTO `aparatodomestico` (`id`, `aparato`, `id_residencia`, `potencia`) VALUES
 (28, '1', 5, 13),
 (29, '1', 5, 100),
-(31, '1', 4, 123);
+(31, '1', 4, 123),
+(32, '1', 6, 100);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `consumo_agua`
+-- Estrutura da tabela `consumo_agua`
 --
 
 CREATE TABLE `consumo_agua` (
   `id` int(11) NOT NULL,
   `id_residencia` int(11) NOT NULL,
-  `quantidade_litros` int(11) NOT NULL,
+  `quantidade_m3` int(11) NOT NULL,
   `data_consumo` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `consumo_agua`
+-- Extraindo dados da tabela `consumo_agua`
 --
 
-INSERT INTO `consumo_agua` (`id`, `id_residencia`, `quantidade_litros`, `data_consumo`) VALUES
-(1, 7, 123, '23/05/2019');
+INSERT INTO `consumo_agua` (`id`, `id_residencia`, `quantidade_m3`, `data_consumo`) VALUES
+(1, 5, 123, '23/05/2019'),
+(2, 6, 13255, '18/05/2019'),
+(4, 9, 123213, '01/06/2019'),
+(5, 6, 2147483647, '01/06/2019'),
+(6, 6, 5555, '01/07/2019'),
+(7, 6, 1, '01/07/2019'),
+(8, 5, 123, '01/06/2019');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `consumo_combustivel`
+-- Estrutura da tabela `consumo_combustivel`
 --
 
 CREATE TABLE `consumo_combustivel` (
@@ -77,17 +84,19 @@ CREATE TABLE `consumo_combustivel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `consumo_combustivel`
+-- Extraindo dados da tabela `consumo_combustivel`
 --
 
 INSERT INTO `consumo_combustivel` (`id_residencia`, `quantidade_litros`, `data_consumo`) VALUES
 (6, 124, '23/05/2019'),
-(9, 2222, '23/05/2019');
+(9, 2222, '23/05/2019'),
+(5, 67657, '27/05/2019'),
+(5, 123, '01/06/2019');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `consumo_eletrico`
+-- Estrutura da tabela `consumo_eletrico`
 --
 
 CREATE TABLE `consumo_eletrico` (
@@ -99,7 +108,7 @@ CREATE TABLE `consumo_eletrico` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `consumo_eletrico`
+-- Extraindo dados da tabela `consumo_eletrico`
 --
 
 INSERT INTO `consumo_eletrico` (`id`, `id_residencia`, `id_aparato`, `tempo_consumo`, `data_consumo`) VALUES
@@ -110,12 +119,14 @@ INSERT INTO `consumo_eletrico` (`id`, `id_residencia`, `id_aparato`, `tempo_cons
 (30, 5, 29, 3, '09/04/2019'),
 (31, 5, 28, 5, '08/02/2019'),
 (32, 4, 31, 1, '01/01/2019'),
-(33, 5, 29, 2, '23/05/2019');
+(33, 5, 29, 2, '23/05/2019'),
+(34, 6, 32, 4, '01/06/2019'),
+(35, 6, 32, 4, '01/05/2019');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `habitante`
+-- Estrutura da tabela `habitante`
 --
 
 CREATE TABLE `habitante` (
@@ -128,18 +139,19 @@ CREATE TABLE `habitante` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `habitante`
+-- Extraindo dados da tabela `habitante`
 --
 
 INSERT INTO `habitante` (`id`, `nome`, `sobrenome`, `nascimento`, `sexo`, `id_residencia`) VALUES
 (52, 'Mikael', 'Gallucci', '03/06/1998', 'masculino', 4),
 (53, 'fsdf', 'sdfdsf', '05/28/2019', 'masculino', 9),
-(54, 'Joao', 'Joao', '03/12/2014', 'masculino', 5);
+(54, 'Joao', 'Joao', '03/12/2014', 'masculino', 5),
+(55, '123', '123', '27/05/2019', 'masculino', 7);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `producao_lixo`
+-- Estrutura da tabela `producao_lixo`
 --
 
 CREATE TABLE `producao_lixo` (
@@ -150,16 +162,21 @@ CREATE TABLE `producao_lixo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `producao_lixo`
+-- Extraindo dados da tabela `producao_lixo`
 --
 
 INSERT INTO `producao_lixo` (`id`, `id_residencia`, `quantidade_litros`, `data_consumo`) VALUES
-(1, 5, 323, '23/05/2019');
+(1, 5, 323, '23/05/2019'),
+(2, 5, 1, '01/06/2019'),
+(3, 5, 1, '04/04/2019'),
+(4, 4, 1, '04/04/2019'),
+(5, 4, 2, '01/02/2019'),
+(6, 5, 1, '02/05/2019');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `residencia`
+-- Estrutura da tabela `residencia`
 --
 
 CREATE TABLE `residencia` (
@@ -172,7 +189,7 @@ CREATE TABLE `residencia` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='	';
 
 --
--- Dumping data for table `residencia`
+-- Extraindo dados da tabela `residencia`
 --
 
 INSERT INTO `residencia` (`id`, `endereco`, `numero`, `complemento`, `area`, `cidade`) VALUES
@@ -196,7 +213,7 @@ INSERT INTO `residencia` (`id`, `endereco`, `numero`, `complemento`, `area`, `ci
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -209,13 +226,12 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `confirmado`, `codigo_confirmacao`) VALUES
-(10, '123', 'mikagallucci@hotmail.com', '202cb962ac59075b964b07152d234b70', 0, ''),
-(11, '123', 'mikagallucci@hotmail.com', '202cb962ac59075b964b07152d234b70', 0, ''),
-(12, 'lol', '123@aaa.com', '9cdfb439c7876e703e307864c9167a15', 0, '');
+(25, 'Mikael ', 'mikagallucci@hotmail.com', '202cb962ac59075b964b07152d234b70', 1, 'ca8482e558961269e1f038abefd6194b'),
+(26, '123', '123@aaa.com', '202cb962ac59075b964b07152d234b70', 1, 'b2aa3a3dcd001d5ccf9f69dbb13b5959');
 
 --
 -- Indexes for dumped tables
@@ -272,31 +288,31 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `aparatodomestico`
 --
 ALTER TABLE `aparatodomestico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `consumo_agua`
 --
 ALTER TABLE `consumo_agua`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `consumo_eletrico`
 --
 ALTER TABLE `consumo_eletrico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `habitante`
 --
 ALTER TABLE `habitante`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `producao_lixo`
 --
 ALTER TABLE `producao_lixo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `residencia`
@@ -308,7 +324,7 @@ ALTER TABLE `residencia`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
