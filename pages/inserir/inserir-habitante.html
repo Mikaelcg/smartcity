@@ -20,7 +20,11 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
         <script src="/smartcity/bower_components/jquery/dist/jquery.min.js"></script>    
+        <script src="/smartcity/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="/smartcity/bower_components/bootstrap/js/bootstrap.bundle.min.js"></script>
+        
     <script src="/smartcity/dist/js/pages/inserir/inserir-habitante.js"></script>
+    
     <link rel="shortcut icon" type="image/x-icon" href="/smartcity/dist/img/9828skyline.ico">
 </head>
 
@@ -255,17 +259,23 @@
                             <form id="form" action="" name="form" method="post">
                                 <!-- Nome -->
                                 <div class="form-group">
-                                    <label for="nome">Nome</label>
+                                    <label for="nome">Nome</label><button id="nomePopover" type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" >
+                                        <img src="/smartcity/dist/img/not-hearing.png" height="25" width="25">
+                                      </button>
                                     <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
                                 </div>
                                 <!-- Sobrenome -->
                                 <div class="form-group">
-                                    <label for="sobrenome">Sobrenome</label>
+                                    <label for="sobrenome">Sobrenome</label><button id="sobrenomePopover" type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right">
+                                        <img src="/smartcity/dist/img/not-hearing.png" height="25" width="25">
+                                      </button>
                                     <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Sobrenome">
                                 </div>
                                 <!-- Data de nascimento -->
                                 <div class="form-group">
-                                    <label>Data de nascimento</label>
+                                    <label>Data de nascimento</label><button id="dataPopover" type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right">
+                                        <img src="/smartcity/dist/img/not-hearing.png" height="25" width="25">
+                                      </button>
                                     <div class="input-group date">
                                         <div class="input-group-addon">
                                             <i class="fa fa-calendar"></i>
@@ -277,17 +287,23 @@
                                 <div class="form-group">
                                     <label>
                                         Masculino
-                                        <input type="radio" name="sexo" class="minimal" value="masculino" checked>
+                                        <input type="radio" name="sexo" class="minimal" value="masculino" checked><button type="button" id="mascPopover" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right" >
+                                            <img src="/smartcity/dist/img/not-hearing.png" height="25" width="25">
+                                          </button>
                                     </label>
                                     <label>
                                         Feminino
-                                        <input type="radio" name="sexo" value="feminino" class="minimal">
+                                        <input type="radio" name="sexo" value="feminino" class="minimal"><button type="button" id="femPopover" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right" >
+                                            <img src="/smartcity/dist/img/not-hearing.png" height="25" width="25">
+                                          </button>
                                     </label>
                                 </div>
     
                                 <!-- Residencia -->
                                 <div class="form-group">
-                                    <label>Residência</label>
+                                    <label>Residência</label><button type="button" id="resPopover" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right" >
+                                        <img src="/smartcity/dist/img/not-hearing.png" height="25" width="25">
+                                      </button>
                                     <select name="residencia" id="residencias" class="form-control select2" style="width: 100%;">
                                             <option disabled selected value=""> Selecione uma residencia </option>
                                     </select>
@@ -297,7 +313,9 @@
                                     <i class="fa fa-refresh fa-spin" style="z-index: 3; display: none;" id="loading"></i>
                                 </div>
                                 <div class="box-footer">
-                                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                    <button type="submit" class="btn btn-primary">Cadastrar</button><button type="button" id="cadastroPopover" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right">
+                                        <img src="/smartcity/dist/img/not-hearing.png" height="25" width="25">
+                                      </button>
                                 </div>
                             </form>
                         </div>

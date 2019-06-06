@@ -1,6 +1,57 @@
 $(document).ready(function() {
 
-	listaIdResidencia();
+    listaIdResidencia();
+    
+    $("#nomePopover").popover({
+        html: true,
+        trigger: 'click',
+        placement: 'right',
+        content: '<div class="media"><a href="#" class="pull-left"><img src="/smartcity/dist/img/Nome-libras.png" class="media-object" alt="Sample Image"></a></div>' 
+    });
+
+    $("#sobrenomePopover").popover({
+        html: true,
+        trigger: 'click',
+        placement: 'right',
+        content: '<div class="media"><a href="#" class="pull-left"><img src="/smartcity/dist/img/Sobrenome-libras.png" class="media-object" alt="Sample Image"></a></div>' 
+    });
+
+    $("#dataPopover").popover({
+        html: true,
+        trigger: 'click',
+        placement: 'right',
+        content: '<div class="media"><a href="#" class="pull-left"><img src="/smartcity/dist/img/Data-nascimento.png" class="media-object" alt="Sample Image"></a></div>' 
+    });
+
+    $("#mascPopover").popover({
+        html: true,
+        trigger: 'click',
+        placement: 'right',
+        content: '<div class="media"><a href="#" class="pull-left"><img src="/smartcity/dist/img/Masculino.png" class="media-object" alt="Sample Image"></a></div>' 
+    });
+
+    $("#femPopover").popover({
+        html: true,
+        trigger: 'click',
+        placement: 'right',
+        content: '<div class="media"><a href="#" class="pull-left"><img src="/smartcity/dist/img/Feminino.png" class="media-object" alt="Sample Image"></a></div>' 
+    });
+
+    $("#resPopover").popover({
+        html: true,
+        trigger: 'click',
+        placement: 'right',
+        content: '<div class="media"><a href="#" class="pull-left"><img src="/smartcity/dist/img/Residencia.png" class="media-object" alt="Sample Image"></a></div>' 
+    });
+
+
+    $("#cadastroPopover").popover({
+        html: true,
+        trigger: 'click',
+        placement: 'right',
+        content: '<div class="media"><a href="#" class="pull-left"><img src="/smartcity/dist/img/Cadastro.png" class="media-object" alt="Sample Image"></a></div>' 
+    });
+
 
 	$("#form").submit(function(e) {
         $('#loading').css("display", "initial");
