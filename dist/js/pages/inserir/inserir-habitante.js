@@ -5,6 +5,7 @@ $(document).ready(function() {
     $("#nomePopover").popover({
         html: true,
         trigger: 'click',
+        container: 'body',
         placement: 'right',
         content: '<div class="media"><a href="#" class="pull-left"><img src="/smartcity/dist/img/Nome-libras.png" class="media-object" alt="Sample Image"></a></div>' 
     });
@@ -12,6 +13,7 @@ $(document).ready(function() {
     $("#sobrenomePopover").popover({
         html: true,
         trigger: 'click',
+        container: 'body',
         placement: 'right',
         content: '<div class="media"><a href="#" class="pull-left"><img src="/smartcity/dist/img/Sobrenome-libras.png" class="media-object" alt="Sample Image"></a></div>' 
     });
